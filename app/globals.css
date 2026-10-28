@@ -334,9 +334,12 @@ kbd {
     display: none;
   }
 
-  #tentang .btn {
+  #tentang .btn[href^='mailto'] {
     padding: 10px 12px;
-    font-size: 0.82rem;
+  }
+
+  #tentang .btn[href^='mailto'] > svg {
+    display: none;
   }
 }
 
