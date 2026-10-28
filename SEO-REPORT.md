@@ -179,8 +179,9 @@ Bagian ini ditambahkan setelah pengecekan ulang build produksi lokal dan artefak
 | SEO-11 (satu URL untuk semua fitur) | Tetap strategis; sitemap masih 1 URL. |
 
 ## Drift data yang perlu diketahui
-- `data/flows.ts` bertambah menjadi 72 alur (laporan awal menyebut 9); `SITE_DESCRIPTION` kini 144 char dan menyebut 72 alur.
-- JSON-LD kini memuat `Offer` per paket berharga dan `sameAs` sosial dari `lib/site.ts` (perubahan di luar track SEO awal). Angka/harga tetap harus diverifikasi pemilik konten.
+- `data/flows.ts` bertambah menjadi 72 alur (laporan awal menyebut 9).
+- Penawaran harga (`Offer` / price list) dihapus dari landing; SEO tidak lagi memuat skema harga.
+- Mitra kerja sama ditambahkan: **Bankaltimtara** (VA) dan **SD Muhammadiyah 3 Samarinda** (sekolah mitra) — lihat pembaruan di bawah.
 
 ---
 
@@ -212,3 +213,23 @@ Rename merek penuh di seluruh permukaan publik (metadata, JSON-LD, OG/Twitter, m
 - OG image: 200 `image/png`, 1200×630, ~87 KB; `og:image:alt` dan `twitter:image:alt` terisi.
 - 404: status 404 dan `noindex` (dua tag konsisten: otomatis dari Next + metadata rute).
 - `robots.txt`: allow all + sitemap produksi; `sitemap.xml`: 1 URL produksi.
+
+---
+
+# Pembaruan 2026-10-28 — mitra Bankaltimtara & SD Muhammadiyah 3
+
+Landing menampilkan kerja sama dengan Bankaltimtara (Virtual Account) dan SD Muhammadiyah 3 Samarinda. SEO diselaraskan agar deskripsi, kata kunci, JSON-LD, dan kartu sosial menyebut mitra tersebut (tanpa klaim harga).
+
+## Yang berubah
+
+| Area | File | Hasil |
+|---|---|---|
+| Deskripsi & keywords | `lib/seo.ts` | `SITE_DESCRIPTION` menyebut kedua mitra; keywords VA Bankaltimtara + SD Muhammadiyah 3 Samarinda |
+| Structured data | `lib/seo.ts` | Node `BankOrCreditUnion` + `ElementarySchool`; `WebPage.mentions` + `hasPart` `#mitra`; `knowsAbout` / `featureList` VA |
+| Gambar sosial | `app/opengraph-image.tsx` | Copy mitra + baris nama partner; alt menyebut kedua mitra |
+| Data sumber | `data/partners.ts` | Single source of truth untuk nama/URL/logo yang diikat ke SEO |
+
+## Catatan
+
+- Harga/`Offer` tidak dikembalikan.
+- Alamat sekolah di JSON-LD hanya locality/region (Samarinda, Kaltim) — tanpa mengarang jalan lengkap di luar data publik yang sudah dipakai di copy mitra.

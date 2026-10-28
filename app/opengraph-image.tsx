@@ -1,12 +1,12 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
-import { features } from '@/data/features';
-import { flows } from '@/data/flows';
+import { inventory } from '@/data/inventory';
+import { partners } from '@/data/partners';
 import { BRAND } from '@/lib/brand';
 import { SITE_NAME, SITE_URL } from '@/lib/seo';
 
-export const alt = `${SITE_NAME} — ${BRAND.shortTagline}`;
+export const alt = `${SITE_NAME} — mitra ${partners.map((p) => p.name).join(' & ')}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -16,6 +16,7 @@ export default async function OpengraphImage() {
   );
   const logoSrc = `data:image/png;base64,${mark.toString('base64')}`;
   const host = new URL(SITE_URL).host;
+  const partnerLine = partners.map((p) => p.name).join('  ·  ');
 
   return new ImageResponse(
     (
@@ -54,30 +55,39 @@ export default async function OpengraphImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: 64,
+            fontSize: 56,
             fontWeight: 800,
             lineHeight: 1.08,
             letterSpacing: -2,
             maxWidth: 1040,
           }}
         >
-          Semua kebutuhan sekolah, terhubung dalam satu sistem.
+          Mitra bank & sekolah yang sudah berjalan di lapangan.
         </div>
         <div
           style={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            fontSize: 26,
+            flexDirection: 'column',
+            gap: 14,
+            fontSize: 24,
             color: '#8fa0b5',
           }}
         >
-          <div style={{ display: 'flex', gap: 16 }}>
-            <div style={{ display: 'flex' }}>{features.length} fitur</div>
-            <div style={{ display: 'flex' }}>·</div>
-            <div style={{ display: 'flex' }}>{flows.length} alur</div>
+          <div style={{ display: 'flex', color: '#c5d4e8' }}>{partnerLine}</div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div style={{ display: 'flex', gap: 16 }}>
+              <div style={{ display: 'flex' }}>{inventory.features} fitur</div>
+              <div style={{ display: 'flex' }}>·</div>
+              <div style={{ display: 'flex' }}>{inventory.flows} alur</div>
+            </div>
+            <div style={{ display: 'flex', color: '#1af0a0' }}>{host}</div>
           </div>
-          <div style={{ display: 'flex', color: '#1af0a0' }}>{host}</div>
         </div>
       </div>
     ),
