@@ -1,6 +1,5 @@
 'use client';
 
-import Script from 'next/script';
 import { useEffect } from 'react';
 import { Icon } from '@/lib/icons';
 import { CAL_EVENTS, CAL_PROFILE_URL, CAL_USERNAME } from '@/lib/site';
@@ -12,21 +11,36 @@ declare global {
       ns?: Record<string, unknown>;
       q?: unknown[];
     };
+    __calStarted?: boolean;
   }
 }
 
+const CAL_SCRIPT = 'https://app.cal.com/embed/embed.js';
+
 function initCal() {
-  if (typeof window === 'undefined' || !window.Cal) return;
-  try {
-    window.Cal('init', { origin: 'https://cal.com' });
-    window.Cal('ui', {
-      hideEventTypeDetails: false,
-      layout: 'month_view',
-      theme: 'light',
-    });
-  } catch {
-    // Embed optional — href fallback still works.
+  if (typeof window === 'undefined' || window.__calStarted) return;
+  window.__calStarted = true;
+
+  if (!window.Cal) {
+    const cal = ((...args: unknown[]) => {
+      (cal.q = cal.q ?? []).push(args);
+    }) as NonNullable<Window['Cal']>;
+    cal.q = [];
+    cal.ns = {};
+    window.Cal = cal;
+
+    const script = document.createElement('script');
+    script.src = CAL_SCRIPT;
+    script.async = true;
+    document.head.appendChild(script);
   }
+
+  window.Cal('init', { origin: 'https://cal.com' });
+  window.Cal('ui', {
+    hideEventTypeDetails: false,
+    layout: 'month_view',
+    theme: 'light',
+  });
 }
 
 type Props = {
@@ -43,11 +57,6 @@ export default function CalBook({ variant = 'buttons', className }: Props) {
   if (variant === 'cards') {
     return (
       <div className={className}>
-        <Script
-          src="https://app.cal.com/embed/embed.js"
-          strategy="lazyOnload"
-          onLoad={initCal}
-        />
         <div className="cal-cards">
           {CAL_EVENTS.map((ev) => (
             <a
@@ -89,11 +98,6 @@ export default function CalBook({ variant = 'buttons', className }: Props) {
 
   return (
     <div className={`row ${className ?? ''}`} style={{ justifyContent: 'center' }}>
-      <Script
-        src="https://app.cal.com/embed/embed.js"
-        strategy="lazyOnload"
-        onLoad={initCal}
-      />
       <a
         className="btn p"
         href={CAL_PROFILE_URL}

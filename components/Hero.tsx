@@ -57,7 +57,7 @@ export default function Hero() {
             <Icon name="file-text" />
           </u>
         </div>
-        <div className="mn" style={{ position: 'relative', overflow: 'hidden' }}>
+        <div className="mn" style={{ position: 'relative' }}>
           <div className="t">
             <Icon name="users" />
             <div style={{ flex: 1 }}>

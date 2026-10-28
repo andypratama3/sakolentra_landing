@@ -15,7 +15,7 @@
   /* Green usable as TEXT on light bg (WCAG); --green stays punchy for fills */
   --green-text: #007a4e;
   --warn: #f0b429;
-  --success: #00a86b;
+  --success: #00603e;
   --glow: rgba(0, 208, 132, 0.28);
   --glow-strong: rgba(0, 208, 132, 0.42);
   --ring: rgba(0, 102, 224, 0.32);
@@ -205,7 +205,7 @@ header.site {
   place-items: center;
 }
 
-.logo img {
+.logo > img {
   display: block;
   height: 40px;
   width: auto;
@@ -216,7 +216,7 @@ header.site {
   border-radius: 0;
 }
 
-footer.site .logo img {
+footer.site .logo > img {
   height: 34px;
   max-width: min(200px, 46vw);
 }
@@ -313,12 +313,30 @@ kbd {
 }
 
 @media (max-width: 480px) {
-  header.site .ib .lbl {
+  header.site .ib .lbl,
+  header.site .btn.p .lbl {
     display: none;
   }
 
-  header.site .ib {
+  header.site .ib,
+  header.site .btn.p {
     padding: 8px 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  header.site {
+    gap: 6px;
+    padding-inline: 12px;
+  }
+
+  header.site .brand-lockup-text {
+    display: none;
+  }
+
+  #tentang .btn {
+    padding: 10px 12px;
+    font-size: 0.82rem;
   }
 }
 
@@ -334,6 +352,17 @@ nav.rail {
 }
 
 nav.rail a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+nav.rail a::before {
+  content: '';
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -342,7 +371,7 @@ nav.rail a {
   transition: 0.25s;
 }
 
-nav.rail a.on {
+nav.rail a.on::before {
   background: var(--ac);
   border-color: var(--ac);
   transform: scale(1.5);
@@ -364,6 +393,9 @@ section.s {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
   border-radius: 10px;
   padding: 12px 20px;
   border: 1px solid var(--bd);
@@ -391,7 +423,7 @@ section.s {
 .btn.p:hover {
   /* Green CTA → brand blue on hover (logo gradient direction) */
   background: var(--ac);
-  color: #fff;
+  color: var(--bg);
   border-color: transparent;
   box-shadow: 0 6px 16px var(--shadow-ac);
 }
@@ -1933,9 +1965,17 @@ dialog.side .btn {
     min-height: 140px;
   }
 
+  .feat-list {
+    grid-template-columns: 1fr;
+  }
+
   .feat-list li {
     font-size: 0.78rem;
     padding: 10px 8px;
+  }
+
+  .feat-list button {
+    padding: 6px 4px;
   }
 
   #hero .row .btn,
@@ -1980,6 +2020,13 @@ footer.site nav {
   flex-wrap: wrap;
 }
 
+footer.site nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 0;
+}
+
 footer.site nav a:hover {
   color: var(--tx);
 }
@@ -2004,6 +2051,12 @@ footer.site nav a:hover {
   footer.site nav {
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1100px) {
+  .feat-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2239,6 +2292,7 @@ footer.site nav a:hover {
 .partners {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .partners > .partner-glow {
@@ -2597,19 +2651,17 @@ footer.site nav a:hover {
 }
 
 /* ─── Active section indicator on RailNav ───────────────── */
-.rail a.on {
-  transform: scale(1.5);
+.rail a.on::before {
   background: var(--acb);
-}
-.rail a {
-  transition: transform 0.25s ease, background 0.25s ease;
+  border-color: var(--acb);
 }
 
 /* ─── Tooltip on RailNav dots ───────────────────────────── */
 .rail a::after {
   content: attr(aria-label);
   position: absolute;
-  left: calc(100% + 10px);
+  right: calc(100% + 10px);
+  left: auto;
   top: 50%;
   transform: translateY(-50%);
   background: var(--tx);
@@ -2673,9 +2725,12 @@ footer.site nav a:hover {
   align-items: center;
   gap: 10px;
   width: 100%;
+  min-width: 0;
   padding: 8px;
   border-radius: 8px;
   text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
   transition: background 0.2s;
 }
 .feat-list button:hover {
@@ -2683,6 +2738,7 @@ footer.site nav a:hover {
 }
 .flow-badge {
   margin-left: auto;
+  flex: none;
   background: var(--acb);
   color: var(--acx);
   padding: 2px 6px;

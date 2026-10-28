@@ -30,6 +30,7 @@ export default function PartnersSection() {
                   alt={`Logo ${p.name}`}
                   width={p.logoWidth}
                   height={p.logoHeight}
+                  sizes="(max-width: 520px) 88vw, (max-width: 820px) 62vw, 360px"
                   className="partner-img"
                 />
               </span>

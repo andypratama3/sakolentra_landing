@@ -264,7 +264,7 @@ export default function FlowSection() {
         </p>
 
           <details style={{ marginTop: 16, marginBottom: 24, fontSize: '0.85rem', color: 'var(--mu)' }}>
-            <summary style={{ cursor: 'pointer', userSelect: 'none' }}>Detail teknis & file kode</summary>
+            <summary style={{ cursor: 'pointer', userSelect: 'none', padding: '6px 0', minHeight: 24 }}>Detail teknis & file kode</summary>
             <div style={{ marginTop: 10, padding: 12, background: 'var(--bg)', border: '1px solid var(--bd)', borderRadius: 8, fontFamily: 'monospace' }}>
               {flow.evidence || 'Tidak ada detail teknis.'}
             </div>
