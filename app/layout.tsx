@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import JsonLd from '@/components/JsonLd';
 import { BRAND } from '@/lib/brand';
@@ -101,6 +102,7 @@ export default function RootLayout({
           Lewati ke konten utama
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
