@@ -138,7 +138,7 @@
 
 Bagian ini ditambahkan setelah pengecekan ulang build produksi lokal dan artefak live. Temuan `SEO-01`–`SEO-11` di atas tetap menjadi riwayat; status terbarunya ada di sini.
 
-## Status artefak live (masih build lama)
+## Status artefak live sebelum redeploy
 
 | Item | Artefak live | Build lokal terbaru |
 |---|---|---|
@@ -147,7 +147,7 @@ Bagian ini ditambahkan setelah pengecekan ulang build produksi lokal dan artefak
 | Sitemap | 200, 1 URL | 200, 1 URL |
 | OG image | 200 `image/png` | 200 `image/png` |
 
-**Kesimpulan:** perbaikan SEO belum tayang. Redeploy Vercel wajib; tanpa itu Google tetap melihat `noindex` + canonical localhost.
+**Kesimpulan saat itu:** perbaikan SEO belum tayang. Setelah redeploy pada 2026-10-28, live sudah memakai canonical produksi dan `index, follow` (lihat bagian akhir).
 
 ## SEO-12 — Default URL & gerbang indexability membuat build tanpa env salah
 - **Tier:** 1 (diperbaiki)
