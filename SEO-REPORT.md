@@ -197,7 +197,7 @@ Rename merek penuh di seluruh permukaan publik (metadata, JSON-LD, OG/Twitter, m
 | Structured data | `lib/seo.ts` | `Organization` + `logo` ImageObject + `contactPoint`; `WebPage`; `SoftwareApplication` (`featureList` 14 kategori, `screenshot`, `offers` 5 paket); `Person` dengan `@id` |
 | Gambar sosial | `app/opengraph-image.tsx` | 1200×630, mark S Wisuda, wordmark + tagline, `75 fitur · 72 alur`, host produksi; alt baru |
 | Manifest | `app/manifest.ts` | `name`, `short_name`, `lang: id`, `categories`, ikon 512/180; terbit di `/manifest.webmanifest` |
-| 404 | `app/not-found.tsx` | Copy Sakolentra, description, `noindex` dari Next (tanpa duplikasi meta) |
+| 404 | `app/not-found.tsx` | Copy Sakolentra, description, `robots: noindex` agar menimpa `index, follow` root |
 | Email/form | `app/actions/contact.ts` | Heading `Lead Sakolentra`, subject `[Sakolentra]` |
 | Copy & data | `components/*`, `data/features.ts`, `data/flows.ts`, `README.md`, `.env.example` | Tidak ada lagi `ProductSchool` di HTML publik |
 | Inventory fallback | `data/pricing.ts` | `188` route, `233` permission (bukan angka lama 226/380) |
@@ -210,5 +210,5 @@ Rename merek penuh di seluruh permukaan publik (metadata, JSON-LD, OG/Twitter, m
 - Canonical `https://sakolentra.vercel.app`; robots `index, follow`; manifest, ikon 48/512/180, dan theme-color terpasang.
 - JSON-LD: 1 blok valid, 5 tipe, 5 `Offer` IDR, `featureList` 14 kategori.
 - OG image: 200 `image/png`, 1200×630, ~87 KB; `og:image:alt` dan `twitter:image:alt` terisi.
-- 404: status 404 dan `noindex` (satu tag).
+- 404: status 404 dan `noindex` (dua tag konsisten: otomatis dari Next + metadata rute).
 - `robots.txt`: allow all + sitemap produksi; `sitemap.xml`: 1 URL produksi.

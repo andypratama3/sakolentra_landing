@@ -4,6 +4,7 @@ import { inventory } from '@/data/pricing';
 export const metadata = {
   title: 'Halaman tidak ditemukan',
   description: 'Alamat yang Anda buka tidak tersedia. Kembali ke beranda Sakolentra untuk menjelajahi fitur dan alur sistem sekolah.',
+  robots: { index: false, follow: true },
 };
 
 export default function NotFound() {
