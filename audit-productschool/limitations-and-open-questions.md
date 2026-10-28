@@ -72,6 +72,7 @@
 | Direktori repo aplikasi berganti nama dari `Development/ProductSchool` menjadi `Development/Sakolentra`. | Sitasi path di `01`–`12` dipertahankan sebagai path saat audit. Untuk navigasi sekarang gunakan `Sakolentra/src/...`. |
 | HEAD bergerak dari `994b431f` ke `59f68d81` (“update logs blade”), dan ada perubahan eksternal branding ProductSchool → Sakolentra di README, `.env.example`, `SchoolHelper.php`, `school.php`, `AiChatService.php`, `composer.json`, `rapor.php`, `package.json`, `api.json`, `PushNotificationObserver.php`, `RaporDataSeeder.php`. | Temuan yang menyentuh file tersebut perlu dire-verifikasi sebelum ditutup. Perubahan eksternal tidak boleh di-revert. |
 | `src/app/Http/Requests/Dashboard/CooperationRequest.php` diubah (izin `create-cooperations`/`edit-cooperations`, `sort_order min:0`, batas dimensi foto). | Uji ulang RBAC/isolasi pada endpoint kerja sama (lihat `verification-checklist.md` V-32). |
+| Domain live berpindah dari `product-school.vercel.app` ke `https://sakolentra.vercel.app` (2026-10-28); referensi live di dokumen audit dipertahankan sebagai kondisi saat audit. | Verifikasi ulang artefak live memakai domain baru. |
 | Private key: 4 file `privkey*.pem` tracked (root, live, 2 arsip) pada commit `b0cbeb60`/`3de5949f`/`18f426cc`; sertifikat live Let's Encrypt kedaluwarsa 2026-07-10. | Tetap P0 (pernah bocor), bukan “aman karena kedaluwarsa”. Lihat `private-key-rotation-runbook.md`. |
 
 ## 4. Asumsi yang Dipakai

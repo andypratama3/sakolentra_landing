@@ -8,7 +8,7 @@ Dokumen ini adalah daftar kerja untuk mengubah temuan `BLOCKED` / `BELUM DIVERIF
 
 | ID | Item | Bukti yang dibutuhkan | Kriteria lulus | Pemilik |
 |---|---|---|---|---|
-| V-01 | Redeploy build yang memuat perbaikan SEO | `curl -s https://product-school.vercel.app/ \| grep -E 'canonical\|robots'`; status `robots.txt`, `sitemap.xml`, `opengraph-image` | canonical `https://product-school.vercel.app`; `index, follow`; sitemap & OG `200` | Andy / akses Vercel |
+| V-01 | Redeploy build yang memuat perbaikan SEO | `curl -s https://sakolentra.vercel.app/ \| grep -E 'canonical\|robots'`; status `robots.txt`, `sitemap.xml`, `opengraph-image` | canonical `https://sakolentra.vercel.app`; `index, follow`; sitemap & OG `200` | Andy / akses Vercel |
 | V-02 | Env produksi Vercel | Screenshot/daftar env (tanpa nilai secret) | `NEXT_PUBLIC_NOINDEX` tidak diset; `NEXT_PUBLIC_SITE_URL` benar bila diisi | Andy |
 | V-03 | Rotasi & purge private key | Lihat `private-key-rotation-runbook.md`; `git log --all -- '*privkey*.pem'` setelah purge | Tidak ada key di HEAD/history; key lama tidak dipakai lagi | Andy |
 | V-04 | Pemeriksaan merek “Sakolentra” | Hasil pencarian manual PDKI/DJKI (`pdki-indonesia.dgip.go.id`), domain, akun sosial; simpan tanggal + tangkapan layar | Status jelas: terdaftar / tidak ditemukan / perlu pendaftaran | Andy / konsultan merek |

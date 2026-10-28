@@ -1,7 +1,7 @@
 import { inventory, ALL_TIERS } from '@/data/pricing';
 import { SOCIAL } from '@/lib/site';
 
-const PRODUCTION_URL = 'https://product-school.vercel.app';
+const PRODUCTION_URL = 'https://sakolentra.vercel.app';
 const RAW = process.env.NEXT_PUBLIC_SITE_URL?.trim() || PRODUCTION_URL;
 
 export const SITE_URL = RAW.replace(/\/+$/, '');

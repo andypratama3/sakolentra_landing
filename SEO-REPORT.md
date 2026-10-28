@@ -2,7 +2,7 @@
 
 ## Ringkasan
 - Baseline: typecheck **OK**, build **OK** (`/` dan `/_not-found` statis `○`)
-- Domain produksi: **https://product-school.vercel.app** (diberikan user saat audit)
+- Domain produksi: **https://sakolentra.vercel.app** (domain aktif sejak 2026-10-28)
 - Data yang masih dibutuhkan: akun sosial resmi (`sameAs`), harga resmi (`Offer`), token GSC — ketiganya opsional, tidak dikarang
 - Temuan: **11** (Tier 1: **7**, Tier 2: **3**, Tier 3: **1**)
 - Diubah: **0** (Fase 1 read-only)
@@ -125,7 +125,7 @@
 - Tidak ada `sameAs`/`Offer`/`rating` karangan di rencana JSON-LD
 
 ## Tugas manual pasca-deploy
-1. Set `NEXT_PUBLIC_SITE_URL=https://product-school.vercel.app` di Vercel (Production) + rebuild; `NEXT_PUBLIC_NOINDEX=true` untuk Preview/Staging
+1. Set `NEXT_PUBLIC_SITE_URL=https://sakolentra.vercel.app` di Vercel (Production) + rebuild; `NEXT_PUBLIC_NOINDEX=true` untuk Preview/Staging
 2. Verifikasi domain di GSC + Bing Webmaster; kirim `/sitemap.xml`; URL Inspection `/`
 3. Rich Results Test / Schema Validator untuk JSON-LD
 4. PageSpeed Insights mobile sebagai baseline LCP/CLS/INP
@@ -142,7 +142,7 @@ Bagian ini ditambahkan setelah pengecekan ulang build produksi lokal dan artefak
 
 | Item | Artefak live | Build lokal terbaru |
 |---|---|---|
-| Canonical | `http://localhost:3100` | `https://product-school.vercel.app` |
+| Canonical | `http://localhost:3100` | `https://sakolentra.vercel.app` |
 | Robots meta | `noindex, nofollow` | `index, follow` |
 | Sitemap | 200, 1 URL | 200, 1 URL |
 | OG image | 200 `image/png` | 200 `image/png` |
