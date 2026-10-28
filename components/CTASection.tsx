@@ -1,6 +1,6 @@
 import { Icon } from '@/lib/icons';
 import { audiences, stack } from '@/data/sales';
-import { inventory } from '@/data/pricing';
+import { inventory } from '@/data/inventory';
 import ContactForm from './ContactForm';
 import CalBook from './CalBook';
 
@@ -21,7 +21,7 @@ export default function CTASection() {
         <div className="cta-panel">
           <h3 className="cta-panel-title">Kirim pesan</h3>
           <p className="mu" style={{ marginBottom: 16 }}>
-            Kami balas via email. Sertakan paket jika sudah memilih.
+            Kami balas via email. Ceritakan kebutuhan sekolah Anda.
           </p>
           <ContactForm />
         </div>
@@ -57,9 +57,9 @@ export default function CTASection() {
           <Icon name="layout-grid" />
           Jelajahi fitur lagi
         </a>
-        <a className="btn" href="#harga">
-          <Icon name="wallet" />
-          Lihat harga
+        <a className="btn" href="#mitra">
+          <Icon name="banknote" />
+          Lihat mitra
         </a>
       </div>
     </section>

@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { Icon } from '@/lib/icons';
+import BrandLogo from './BrandLogo';
 import SearchDialog from './SearchDialog';
+
+const THEME_KEY = 'sk-theme';
 
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -38,28 +41,26 @@ export default function Header() {
     root.dataset.theme = next;
     setTheme(next);
     try {
-      localStorage.setItem('ps-theme', next);
+      localStorage.setItem(THEME_KEY, next);
+      // Migrate away from legacy key.
+      localStorage.removeItem('ps-theme');
     } catch {}
   };
 
   return (
     <>
       <header className="site">
-        <div className="logo">
-          <img
-            src="/brand/logo-sakolentra.png"
-            alt="Sakolentra — Pendidikan Digital"
-            width={768}
-            height={230}
-          />
-        </div>
+        <a className="logo" href="#hero" aria-label="Sakolentra — beranda">
+          <BrandLogo priority />
+        </a>
         <span className="sp" />
-        <button className="ib" onClick={() => setSearchOpen(true)} aria-label="Cari">
+        <button type="button" className="ib" onClick={() => setSearchOpen(true)} aria-label="Cari">
           <Icon name="search" />
           <span className="lbl">Cari</span>
           <kbd>{mac ? '⌘K' : 'Ctrl K'}</kbd>
         </button>
         <button
+          type="button"
           className="ib"
           onClick={toggleTheme}
           aria-label="Ganti tema"

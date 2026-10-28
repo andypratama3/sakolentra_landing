@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { inventory } from '@/data/pricing';
+import { inventory } from '@/data/inventory';
 
 export const metadata = {
   title: 'Halaman tidak ditemukan',

@@ -7,7 +7,7 @@ import FeaturesSection from '@/components/FeaturesSection';
 import { FlowProvider } from '@/components/FlowContext';
 import FlowSection from '@/components/FlowSection';
 import ResultsSection from '@/components/ResultsSection';
-import PriceSection from '@/components/PriceSection';
+import PartnersSection from '@/components/PartnersSection';
 import AboutSection from '@/components/AboutSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
@@ -32,7 +32,7 @@ export default function Home() {
           <FlowSection />
           <ResultsSection />
         </FlowProvider>
-        <PriceSection />
+        <PartnersSection />
         <AboutSection />
         <CTASection />
       </main>

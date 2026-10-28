@@ -1,23 +1,21 @@
+import BrandLogo from './BrandLogo';
+import { BRAND } from '@/lib/brand';
+
 export default function Footer() {
   return (
     <footer className="site">
-      <div className="logo">
-        <img
-          src="/brand/logo-sakolentra.png"
-          alt="Sakolentra — Pendidikan Digital"
-          width={768}
-          height={230}
-        />
-      </div>
+      <a className="logo" href="#hero" aria-label={`${BRAND.name} — beranda`}>
+        <BrandLogo />
+      </a>
       <span className="sp" />
       <nav aria-label="Navigasi bawah">
         <a href="#fit">Fitur</a>
         <a href="#flow">Alur</a>
-        <a href="#harga">Harga</a>
+        <a href="#mitra">Mitra</a>
         <a href="#tentang">Tentang</a>
         <a href="#cta">Kontak</a>
       </nav>
-      <span className="mu">© 2026 Sakolentra</span>
+      <span className="mu">© 2026 {BRAND.name}</span>
     </footer>
   );
 }

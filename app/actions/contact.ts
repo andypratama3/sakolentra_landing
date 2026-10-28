@@ -2,7 +2,6 @@
 
 import { Resend } from 'resend';
 import { CONTACT_EMAIL, RESEND_FROM } from '@/lib/site';
-import { findTier } from '@/data/pricing';
 
 export type ContactState = {
   ok: boolean;
@@ -39,8 +38,6 @@ export async function submitContact(
   const email = str(formData.get('email'), 160).toLowerCase();
   const school = str(formData.get('school'), 160);
   const message = str(formData.get('message'), 4000);
-  const paket = str(formData.get('paket'), 40);
-  const tier = findTier(paket);
 
   const fieldErrors: ContactState['fieldErrors'] = {};
   if (name.length < 2) fieldErrors.name = 'Nama minimal 2 karakter.';
@@ -65,15 +62,10 @@ export async function submitContact(
     };
   }
 
-  const paketLabel = tier
-    ? `${tier.name} (${tier.price}${tier.period === '/bulan' ? '/bln' : tier.period !== 'penawaran' ? ` · ${tier.period}` : ''})`
-    : paket || 'Belum dipilih';
-
   const text = [
     `Nama: ${name}`,
     `Email: ${email}`,
     school ? `Sekolah/Yayasan: ${school}` : null,
-    `Paket: ${paketLabel}`,
     '',
     message,
   ]
@@ -81,12 +73,11 @@ export async function submitContact(
     .join('\n');
 
   const html = `
-    <div style="font-family:system-ui,sans-serif;line-height:1.5;color:#101410">
+    <div style="font-family:system-ui,sans-serif;line-height:1.5;color:#0b1a2e">
       <h2 style="margin:0 0 12px">Lead Sakolentra</h2>
       <p><strong>Nama:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       ${school ? `<p><strong>Sekolah/Yayasan:</strong> ${escapeHtml(school)}</p>` : ''}
-      <p><strong>Paket:</strong> ${escapeHtml(paketLabel)}</p>
       <hr style="border:none;border-top:1px solid #ddd;margin:16px 0" />
       <p style="white-space:pre-wrap">${escapeHtml(message)}</p>
     </div>
@@ -98,7 +89,7 @@ export async function submitContact(
       from: RESEND_FROM,
       to: [CONTACT_EMAIL],
       replyTo: email,
-      subject: `[Sakolentra] ${name}${tier ? ` · ${tier.name}` : ''}`,
+      subject: `[Sakolentra] ${name}`,
       text,
       html,
     });

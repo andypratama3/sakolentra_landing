@@ -1,24 +1,14 @@
 'use client';
 
-import { useActionState, useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useActionState, useEffect } from 'react';
 import { submitContact, type ContactState } from '@/app/actions/contact';
-import { ALL_TIERS, findTier } from '@/data/pricing';
 import { Icon } from '@/lib/icons';
 import { showToast } from './Toast';
 
 const initial: ContactState = { ok: false, message: '' };
 
-function ContactFormInner() {
+export default function ContactForm() {
   const [state, action, pending] = useActionState(submitContact, initial);
-  const searchParams = useSearchParams();
-  const paketParam = searchParams.get('paket') ?? '';
-  const [paket, setPaket] = useState(() => findTier(paketParam)?.id ?? '');
-
-  useEffect(() => {
-    const matched = findTier(paketParam);
-    setPaket(matched?.id ?? '');
-  }, [paketParam]);
 
   useEffect(() => {
     if (!state.message) return;
@@ -93,25 +83,6 @@ function ContactFormInner() {
       </div>
 
       <div className="field">
-        <label htmlFor="cf-paket">Paket minat</label>
-        <select
-          id="cf-paket"
-          name="paket"
-          value={paket}
-          onChange={(e) => setPaket(e.target.value)}
-          disabled={pending}
-        >
-          <option value="">Belum dipilih</option>
-          {ALL_TIERS.map((t) => (
-            <option key={t.id} value={t.id}>
-              {t.name} — {t.price}
-              {t.period === '/bulan' ? '/bln' : t.period !== 'penawaran' ? ` (${t.period})` : ''}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="field">
         <label htmlFor="cf-message">Pesan</label>
         <textarea
           id="cf-message"
@@ -147,19 +118,5 @@ function ContactFormInner() {
         </p>
       )}
     </form>
-  );
-}
-
-export default function ContactForm() {
-  return (
-    <Suspense
-      fallback={
-        <div className="contact-form" aria-busy="true">
-          <p className="mu">Memuat formulir…</p>
-        </div>
-      }
-    >
-      <ContactFormInner />
-    </Suspense>
   );
 }

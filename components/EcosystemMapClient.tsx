@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react';
 import { Icon } from '@/lib/icons';
+import { BRAND } from '@/lib/brand';
 import { openFeature, openFlow } from './SearchDialog';
 import { scrollToId } from '@/lib/scroll';
 import type { Category, Feature } from '@/lib/types';
@@ -187,7 +188,14 @@ export default function EcosystemMapClient({ categories, features }: Props) {
             </svg>
 
             <div className="nd c" style={{ left: '50%', top: '50%' }} aria-hidden="true">
-              <Icon name="graduation-cap" aria-hidden="true" />
+              <img
+                src={BRAND.logo.mark}
+                alt=""
+                width={36}
+                height={36}
+                className="nd-mark"
+                decoding="async"
+              />
               Sakolentra
             </div>
 

@@ -9,7 +9,7 @@ const SECTIONS = [
   ['fit', 'Fitur'],
   ['flow', 'Alur'],
   ['done', 'Hasil'],
-  ['harga', 'Harga'],
+  ['mitra', 'Mitra'],
   ['tentang', 'Tentang'],
   ['cta', 'Kontak'],
 ] as const;

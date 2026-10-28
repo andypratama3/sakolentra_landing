@@ -18,8 +18,9 @@ export default function Hero() {
         Semua kebutuhan sekolah, terhubung dalam satu sistem.
       </h1>
       <p className="lead mu r">
-        Sakolentra menyatukan akademik, siswa, staf, keuangan, dan konten
-        sekolah. Pilih satu fitur, lalu ikuti alurnya dari awal sampai hasil.
+        Sakolentra — sistem administrasi dan keuangan operasional lembaga
+        pendidikan terintegrasi. Pilih satu fitur, lalu ikuti alurnya dari awal
+        sampai hasil.
       </p>
       <div className="row r">
         <a className="btn p" href="#fit">

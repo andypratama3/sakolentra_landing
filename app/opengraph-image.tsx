@@ -3,9 +3,10 @@ import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
 import { features } from '@/data/features';
 import { flows } from '@/data/flows';
+import { BRAND } from '@/lib/brand';
 import { SITE_NAME, SITE_URL } from '@/lib/seo';
 
-export const alt = `${SITE_NAME} — Sistem Sekolah Terintegrasi`;
+export const alt = `${SITE_NAME} — ${BRAND.shortTagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -26,8 +27,8 @@ export default async function OpengraphImage() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: 64,
-          background: 'linear-gradient(135deg, #0a0b0a 0%, #101a11 100%)',
-          color: '#f2f4f0',
+          background: 'linear-gradient(135deg, #050910 0%, #063066 48%, #026b48 100%)',
+          color: '#f2f7ff',
           fontFamily: 'sans-serif',
         }}
       >
@@ -36,27 +37,28 @@ export default async function OpengraphImage() {
           <img
             src={logoSrc}
             alt=""
-            width={88}
-            height={88}
-            style={{ borderRadius: 18 }}
+            width={96}
+            height={96}
+            style={{ background: 'transparent' }}
           />
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', fontSize: 44, fontWeight: 700, letterSpacing: -1 }}>
-              {SITE_NAME}
+            <div style={{ display: 'flex', fontSize: 44, fontWeight: 800, letterSpacing: -1 }}>
+              <span style={{ color: BRAND.colors.blueBright }}>SAKO</span>
+              <span style={{ color: BRAND.colors.greenBright }}>LENTRA</span>
             </div>
-            <div style={{ display: 'flex', fontSize: 22, color: '#97a096' }}>
-              Sistem Sekolah Terintegrasi
+            <div style={{ display: 'flex', fontSize: 20, color: '#93a8c2', maxWidth: 720 }}>
+              {BRAND.shortTagline}
             </div>
           </div>
         </div>
         <div
           style={{
             display: 'flex',
-            fontSize: 72,
+            fontSize: 64,
             fontWeight: 800,
-            lineHeight: 1.06,
+            lineHeight: 1.08,
             letterSpacing: -2,
-            maxWidth: 1020,
+            maxWidth: 1040,
           }}
         >
           Semua kebutuhan sekolah, terhubung dalam satu sistem.
@@ -67,7 +69,7 @@ export default async function OpengraphImage() {
             alignItems: 'center',
             justifyContent: 'space-between',
             fontSize: 26,
-            color: '#97a096',
+            color: '#8fa0b5',
           }}
         >
           <div style={{ display: 'flex', gap: 16 }}>
@@ -75,7 +77,7 @@ export default async function OpengraphImage() {
             <div style={{ display: 'flex' }}>·</div>
             <div style={{ display: 'flex' }}>{flows.length} alur</div>
           </div>
-          <div style={{ display: 'flex', color: '#5ce70b' }}>{host}</div>
+          <div style={{ display: 'flex', color: '#1af0a0' }}>{host}</div>
         </div>
       </div>
     ),

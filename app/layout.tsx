@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import JsonLd from '@/components/JsonLd';
+import { BRAND } from '@/lib/brand';
 import {
   INDEXABLE,
   SITE_DESCRIPTION,
@@ -67,8 +68,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: 'cover',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f6f7f4' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0b0a' },
+    { media: '(prefers-color-scheme: light)', color: BRAND.colors.bgLight },
+    { media: '(prefers-color-scheme: dark)', color: BRAND.colors.bgDark },
   ],
 };
 
@@ -90,7 +91,7 @@ export default function RootLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('ps-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}`,
+            __html: `try{var t=localStorage.getItem('sk-theme')||localStorage.getItem('ps-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}`,
           }}
         />
         <JsonLd data={jsonLd} />
