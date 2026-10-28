@@ -18,7 +18,7 @@ export default function Hero() {
         Semua kebutuhan sekolah, terhubung dalam satu sistem.
       </h1>
       <p className="lead mu r">
-        ProductSchool menyatukan akademik, siswa, staf, keuangan, dan konten
+        Sakolentra menyatukan akademik, siswa, staf, keuangan, dan konten
         sekolah. Pilih satu fitur, lalu ikuti alurnya dari awal sampai hasil.
       </p>
       <div className="row r">

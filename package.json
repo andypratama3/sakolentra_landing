@@ -1,8 +1,8 @@
 {
-  "name": "productschool-sales",
+  "name": "sakolentra-sales",
   "version": "1.0.0",
   "private": true,
-  "description": "ProductSchool — situs penjualan source sistem sekolah (Next.js)",
+  "description": "Sakolentra — situs penjualan source sistem sekolah (Next.js)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

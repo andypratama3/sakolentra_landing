@@ -5,7 +5,7 @@ export const CONTACT_EMAIL =
 
 export const RESEND_FROM =
   process.env.RESEND_FROM_EMAIL?.trim() ||
-  'ProductSchool <onboarding@resend.dev>';
+  'Sakolentra <onboarding@resend.dev>';
 
 /** Cal.com username — profile lists 15m and 30m meetings. */
 export const CAL_USERNAME =
@@ -25,7 +25,7 @@ export const CAL_EVENTS = [
   {
     id: '30min',
     label: '30 menit',
-    desc: 'Demo ProductSchool + rencana implementasi',
+    desc: 'Demo Sakolentra + rencana implementasi',
     slug: '30min',
     href: `${CAL_PROFILE_URL}/30min`,
   },

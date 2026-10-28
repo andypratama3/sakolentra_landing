@@ -82,7 +82,7 @@ export async function submitContact(
 
   const html = `
     <div style="font-family:system-ui,sans-serif;line-height:1.5;color:#101410">
-      <h2 style="margin:0 0 12px">Lead ProductSchool</h2>
+      <h2 style="margin:0 0 12px">Lead Sakolentra</h2>
       <p><strong>Nama:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       ${school ? `<p><strong>Sekolah/Yayasan:</strong> ${escapeHtml(school)}</p>` : ''}
@@ -98,7 +98,7 @@ export async function submitContact(
       from: RESEND_FROM,
       to: [CONTACT_EMAIL],
       replyTo: email,
-      subject: `[ProductSchool] ${name}${tier ? ` · ${tier.name}` : ''}`,
+      subject: `[Sakolentra] ${name}${tier ? ` · ${tier.name}` : ''}`,
       text,
       html,
     });

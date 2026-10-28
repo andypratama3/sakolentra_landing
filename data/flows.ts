@@ -20,7 +20,7 @@ export const flows: Flow[] = [
       {
         title: 'Mulai konten baru',
         action: 'Pilih Buat konten.',
-        system: 'ProductSchool menyiapkan formulir kosong.',
+        system: 'Sakolentra menyiapkan formulir kosong.',
         result: 'Formulir siap diisi.',
         fields: [
           ['Judul', ''],
@@ -33,7 +33,7 @@ export const flows: Flow[] = [
       {
         title: 'Isi judul dan isi',
         action: 'Ketik judul dan isi pengumuman.',
-        system: 'ProductSchool menampung isian sebagai draft.',
+        system: 'Sakolentra menampung isian sebagai draft.',
         result: 'Konten terisi, belum tersimpan.',
         fields: [
           ['Judul', 'Pengumuman Libur Semester', true],
@@ -46,7 +46,7 @@ export const flows: Flow[] = [
       {
         title: 'Simpan konten',
         action: 'Pilih Simpan.',
-        system: 'ProductSchool memeriksa isian lalu menyimpannya.',
+        system: 'Sakolentra memeriksa isian lalu menyimpannya.',
         result: 'Tersimpan sebagai draft. Website belum berubah.',
         fields: [
           ['Judul', 'Pengumuman Libur Semester'],
@@ -59,7 +59,7 @@ export const flows: Flow[] = [
       {
         title: 'Periksa pratinjau',
         action: 'Pilih Pratinjau.',
-        system: 'ProductSchool menampilkan konten seperti di website.',
+        system: 'Sakolentra menampilkan konten seperti di website.',
         result: 'Tampilan bisa dipastikan sebelum tayang.',
         fields: [
           ['Judul', 'Pengumuman Libur Semester'],
@@ -78,7 +78,7 @@ export const flows: Flow[] = [
         title: 'Publikasikan',
         action: 'Pilih Publikasikan.',
         system:
-          'ProductSchool mengubah status menjadi terbit dan memperbarui website.',
+          'Sakolentra mengubah status menjadi terbit dan memperbarui website.',
         result: 'Konten tampil di website publik.',
         fields: [
           ['Judul', 'Pengumuman Libur Semester'],
@@ -110,7 +110,7 @@ export const flows: Flow[] = [
       {
         title: 'Pilih tagihan',
         action: 'Buka tagihan siswa.',
-        system: 'ProductSchool menampilkan rincian tagihan.',
+        system: 'Sakolentra menampilkan rincian tagihan.',
         result: 'Rincian tagihan terlihat.',
         fields: [
           ['Siswa', 'Ahmad (contoh)', true],
@@ -128,7 +128,7 @@ export const flows: Flow[] = [
       {
         title: 'Isi pembayaran',
         action: 'Masukkan jumlah dan tanggal.',
-        system: 'ProductSchool menghitung sisa tagihan.',
+        system: 'Sakolentra menghitung sisa tagihan.',
         result: 'Sisa tagihan nol.',
         fields: [
           ['Jumlah', 'Rp 250.000', true],
@@ -146,7 +146,7 @@ export const flows: Flow[] = [
       {
         title: 'Simpan pembayaran',
         action: 'Pilih Simpan.',
-        system: 'ProductSchool mencatat pembayaran dan memperbarui status.',
+        system: 'Sakolentra mencatat pembayaran dan memperbarui status.',
         result: 'Tagihan ditandai lunas.',
         fields: [
           ['Jumlah', 'Rp 250.000'],
@@ -165,20 +165,20 @@ export const flows: Flow[] = [
   },
   {
     key: 'ig',
-    title: 'Alur Koneksi Instagram: dari ProductSchool ke akun terhubung',
-    leftLabel: 'ProductSchool',
+    title: 'Alur Koneksi Instagram: dari Sakolentra ke akun terhubung',
+    leftLabel: 'Sakolentra',
     rightLabel: 'Meta dan Instagram',
     evidence:
       'OAuth Meta → cek akun profesional → ID + username + foto. Evidence: integrations routes, InstagramOAuthController, InstagramAccount model.',
     results: [
-      'Akun Instagram profesional terhubung ke ProductSchool.',
-      'Halaman Integrasi Instagram di ProductSchool.',
+      'Akun Instagram profesional terhubung ke Sakolentra.',
+      'Halaman Integrasi Instagram di Sakolentra.',
     ],
     steps: [
       {
         title: 'Buka Integrasi Instagram',
         action: 'Pilih menu Integrasi Instagram.',
-        system: 'ProductSchool menampilkan status koneksi.',
+        system: 'Sakolentra menampilkan status koneksi.',
         result: 'Belum ada akun terhubung.',
         fields: [['Akun Instagram', 'Belum terhubung']],
         badge: ['Belum terhubung', ''],
@@ -188,7 +188,7 @@ export const flows: Flow[] = [
       {
         title: 'Mulai koneksi',
         action: 'Pilih Hubungkan Instagram.',
-        system: 'ProductSchool mengalihkan Anda ke Meta.',
+        system: 'Sakolentra mengalihkan Anda ke Meta.',
         result: 'Halaman otorisasi Meta terbuka.',
         fields: [['Akun Instagram', 'Mengalihkan ke Meta', true]],
         badge: ['Mengalihkan', 'y'],
@@ -202,7 +202,7 @@ export const flows: Flow[] = [
       },
       {
         title: 'Beri otorisasi',
-        action: 'Izinkan ProductSchool mengakses akun.',
+        action: 'Izinkan Sakolentra mengakses akun.',
         system: 'Meta meminta persetujuan dan memeriksa akun profesional.',
         result: 'Akun profesional dipilih.',
         fields: [['Akun Instagram', 'Menunggu otorisasi']],
@@ -216,9 +216,9 @@ export const flows: Flow[] = [
         },
       },
       {
-        title: 'Kembali ke ProductSchool',
+        title: 'Kembali ke Sakolentra',
         action: 'Tunggu sampai Anda dialihkan kembali.',
-        system: 'ProductSchool menerima otorisasi dan menyimpan koneksi.',
+        system: 'Sakolentra menerima otorisasi dan menyimpan koneksi.',
         result: 'Koneksi tersimpan.',
         fields: [['Akun Instagram', 'Memproses']],
         badge: ['Memproses', 'y'],
@@ -227,14 +227,14 @@ export const flows: Flow[] = [
           kind: 'page',
           label: 'Meta',
           headline: 'Otorisasi berhasil',
-          body: 'Mengalihkan kembali ke ProductSchool.',
+          body: 'Mengalihkan kembali ke Sakolentra.',
         },
       },
       {
         title: 'Akun terhubung',
         action: 'Periksa informasi akun.',
         system:
-          'ProductSchool menampilkan username, foto profil, dan ID akun.',
+          'Sakolentra menampilkan username, foto profil, dan ID akun.',
         result: 'Akun siap dipakai untuk publikasi.',
         fields: [
           ['Username', '@akun_sekolah (contoh)'],
@@ -266,7 +266,7 @@ export const flows: Flow[] = [
       {
         title: 'Buka formulir PPDB',
         action: 'Calon siswa membuka portal PPDB.',
-        system: 'ProductSchool menampilkan formulir pendaftaran publik.',
+        system: 'Sakolentra menampilkan formulir pendaftaran publik.',
         result: 'Formulir siap diisi tanpa login.',
         fields: [
           ['Formulir', 'PPDB 2027/2028', true],
@@ -284,7 +284,7 @@ export const flows: Flow[] = [
       {
         title: 'Isi formulir',
         action: 'Lengkapi data diri dan dokumen.',
-        system: 'ProductSchool menampung data sementara.',
+        system: 'Sakolentra menampung data sementara.',
         result: 'Data terisi, belum terkirim.',
         fields: [
           ['Nama', 'Budi Santoso', true],
@@ -356,7 +356,7 @@ export const flows: Flow[] = [
       {
         title: 'Konfigurasi gaji',
         action: 'Atur gaji pokok, tunjangan, dan potongan.',
-        system: 'ProductSchool menyimpan komponen gaji per pegawai.',
+        system: 'Sakolentra menyimpan komponen gaji per pegawai.',
         result: 'Komponen gaji siap.',
         fields: [
           ['Pegawai', 'Guru Mapel (contoh)', true],
@@ -369,7 +369,7 @@ export const flows: Flow[] = [
       {
         title: 'Pilih periode',
         action: 'Pilih bulan berjalan.',
-        system: 'ProductSchool menyiapkan run payroll untuk periode tersebut.',
+        system: 'Sakolentra menyiapkan run payroll untuk periode tersebut.',
         result: 'Run payroll dalam status draft.',
         fields: [
           ['Periode', 'Oktober 2026'],
@@ -435,7 +435,7 @@ export const flows: Flow[] = [
       {
         title: 'Buka absensi',
         action: 'Pegawai membuka aplikasi absensi.',
-        system: 'ProductSchool meminta lokasi dan kamera.',
+        system: 'Sakolentra meminta lokasi dan kamera.',
         result: 'Aplikasi siap check-in.',
         fields: [
           ['Pegawai', 'Guru Piket (contoh)', true],
@@ -487,7 +487,7 @@ export const flows: Flow[] = [
       {
         title: 'Status tersimpan',
         action: 'Selesai.',
-        system: 'ProductSchool mencatat kehadiran dan memicu notifikasi.',
+        system: 'Sakolentra mencatat kehadiran dan memicu notifikasi.',
         result: 'Rekap kehadiran harian diperbarui.',
         fields: [
           ['Pegawai', 'Guru Piket'],
@@ -605,7 +605,7 @@ export const flows: Flow[] = [
       {
         title: 'Buat permintaan',
         action: 'Admin membuat permintaan tanda tangan.',
-        system: 'ProductSchool membuat SignatureRequest dan slug unik.',
+        system: 'Sakolentra membuat SignatureRequest dan slug unik.',
         result: 'Link publik siap dibagikan.',
         fields: [
           ['Surat', 'SK Kenaikan Pangkat', true],
@@ -618,7 +618,7 @@ export const flows: Flow[] = [
       {
         title: 'Bagikan link',
         action: 'Salin dan kirim link /sign/{slug}.',
-        system: 'ProductSchool menyiapkan halaman tanda tangan publik.',
+        system: 'Sakolentra menyiapkan halaman tanda tangan publik.',
         result: 'Penandatangan menerima link.',
         fields: [
           ['Surat', 'SK Kenaikan Pangkat'],
@@ -656,7 +656,7 @@ export const flows: Flow[] = [
       {
         title: 'Arsipkan',
         action: 'Pilih Arsipkan.',
-        system: 'ProductSchool menyimpan PDF final dan menutup link.',
+        system: 'Sakolentra menyimpan PDF final dan menutup link.',
         result: 'Surat terarsip permanen.',
         fields: [
           ['Surat', 'SK Kenaikan Pangkat'],
@@ -774,7 +774,7 @@ export const flows: Flow[] = [
       {
         title: 'Pilih mapel',
         action: 'Buka mapel Matematika.',
-        system: 'ProductSchool menampilkan TP yang sudah ada.',
+        system: 'Sakolentra menampilkan TP yang sudah ada.',
         result: 'Daftar TP terlihat.',
         fields: [['Mapel', 'Matematika', true], ['TP terdaftar', '4']],
         badge: ['Draft', 'y'],
@@ -784,7 +784,7 @@ export const flows: Flow[] = [
       {
         title: 'Susun TP',
         action: 'Tambah TP baru untuk semester ini.',
-        system: 'ProductSchool menyimpan TP ke struktur kurikulum.',
+        system: 'Sakolentra menyimpan TP ke struktur kurikulum.',
         result: 'TP bertambah dan siap dipakai.',
         fields: [['Mapel', 'Matematika'], ['TP terdaftar', '5']],
         badge: ['Tersimpan', 'y'],
@@ -794,7 +794,7 @@ export const flows: Flow[] = [
       {
         title: 'Aktifkan',
         action: 'Aktifkan struktur semester ini.',
-        system: 'ProductSchool menautkan TP ke penilaian guru.',
+        system: 'Sakolentra menautkan TP ke penilaian guru.',
         result: 'Guru bisa menilai per TP.',
         fields: [['Mapel', 'Matematika'], ['Status', 'Aktif']],
         badge: ['Aktif', 'g'],
@@ -820,7 +820,7 @@ export const flows: Flow[] = [
       {
         title: 'Buat tahun baru',
         action: 'Isi tahun dan semester.',
-        system: 'ProductSchool menyiapkan periode baru.',
+        system: 'Sakolentra menyiapkan periode baru.',
         result: 'Draf periode terbentuk.',
         fields: [['Tahun', '2026/2027', true], ['Semester', 'Ganjil']],
         badge: ['Draf', 'y'],
@@ -830,7 +830,7 @@ export const flows: Flow[] = [
       {
         title: 'Aktifkan periode',
         action: 'Jadikan periode aktif.',
-        system: 'ProductSchool memindahkan status aktif via SemesterHelper.',
+        system: 'Sakolentra memindahkan status aktif via SemesterHelper.',
         result: 'Periode baru berlaku di seluruh modul.',
         fields: [['Tahun', '2026/2027'], ['Status', 'Aktif']],
         badge: ['Aktif', 'g'],
@@ -856,7 +856,7 @@ export const flows: Flow[] = [
       {
         title: 'Susun rombel',
         action: 'Bagi siswa ke rombel baru.',
-        system: 'ProductSchool menyimpan penempatan via StudentClassroom.',
+        system: 'Sakolentra menyimpan penempatan via StudentClassroom.',
         result: 'Rombel terisi.',
         fields: [['Kelas', 'VII-A', true], ['Siswa', '32']],
         badge: ['Draf', 'y'],
@@ -892,7 +892,7 @@ export const flows: Flow[] = [
       {
         title: 'Isi slot',
         action: 'Tempatkan mapel ke slot Senin.',
-        system: 'ProductSchool memeriksa bentrok guru dan kelas.',
+        system: 'Sakolentra memeriksa bentrok guru dan kelas.',
         result: 'Slot terisi tanpa bentrok.',
         fields: [['Hari', 'Senin', true], ['Slot', '07:00 Matematika VII-A']],
         badge: ['Draf', 'y'],
@@ -902,7 +902,7 @@ export const flows: Flow[] = [
       {
         title: 'Terbitkan',
         action: 'Terbitkan timetable semester.',
-        system: 'ProductSchool mengunci jadwal per guru dan kelas.',
+        system: 'Sakolentra mengunci jadwal per guru dan kelas.',
         result: 'Timetable bisa dilihat semua peran.',
         fields: [['Status', 'Terbit']],
         badge: ['Terbit', 'g'],
@@ -928,7 +928,7 @@ export const flows: Flow[] = [
       {
         title: 'Atur komponen',
         action: 'Tentukan bobot UH, PTS, PAS.',
-        system: 'ProductSchool menyimpan rumus penilaian.',
+        system: 'Sakolentra menyimpan rumus penilaian.',
         result: 'Rumus berlaku untuk mapel ini.',
         fields: [['UH', '30%', true], ['PTS', '30%'], ['PAS', '40%']],
         badge: ['Draf', 'y'],
@@ -938,7 +938,7 @@ export const flows: Flow[] = [
       {
         title: 'Input nilai',
         action: 'Masukkan nilai atau import XLSX.',
-        system: 'ProductSchool menghitung rekap otomatis.',
+        system: 'Sakolentra menghitung rekap otomatis.',
         result: 'Rekap siap dipakai rapor.',
         fields: [['Siswa dinilai', '32/32']],
         badge: ['Lengkap', 'g'],
@@ -964,7 +964,7 @@ export const flows: Flow[] = [
       {
         title: 'Pilih template',
         action: 'Pilih template surat keterangan.',
-        system: 'ProductSchool memetakan variabel ke data siswa.',
+        system: 'Sakolentra memetakan variabel ke data siswa.',
         result: 'Pratinjau terisi satu siswa.',
         fields: [['Template', 'Suket Aktif', true], ['Kelas', 'VII-A']],
         badge: ['Draf', 'y'],
@@ -974,7 +974,7 @@ export const flows: Flow[] = [
       {
         title: 'Generate bulk',
         action: 'Generate untuk sekelas.',
-        system: 'ProductSchool mengekspor PDF per siswa.',
+        system: 'Sakolentra mengekspor PDF per siswa.',
         result: '32 dokumen siap unduh.',
         fields: [['Dokumen jadi', '32']],
         badge: ['Selesai', 'g'],
@@ -1000,7 +1000,7 @@ export const flows: Flow[] = [
       {
         title: 'Susun blok',
         action: 'Tarik blok teks dan tabel.',
-        system: 'ProductSchool menyimpan susunan ke canvas_json.',
+        system: 'Sakolentra menyimpan susunan ke canvas_json.',
         result: 'Layout tersimpan otomatis.',
         fields: [['Blok', 'Teks + Tabel', true]],
         badge: ['Draf', 'y'],
@@ -1036,7 +1036,7 @@ export const flows: Flow[] = [
       {
         title: 'Input bulk',
         action: 'Isi perkembangan tiap anak.',
-        system: 'ProductSchool menyimpan per fase config inklusi.',
+        system: 'Sakolentra menyimpan per fase config inklusi.',
         result: 'Data terkumpul.',
         fields: [['Anak', '5', true]],
         badge: ['Draf', 'y'],
@@ -1046,7 +1046,7 @@ export const flows: Flow[] = [
       {
         title: 'Finalisasi',
         action: 'Kunci dan cetak halaman rapor.',
-        system: 'ProductSchool merender halaman khusus ke PDF.',
+        system: 'Sakolentra merender halaman khusus ke PDF.',
         result: 'Halaman ABK menyatu di rapor.',
         fields: [['Status', 'Final']],
         badge: ['Final', 'g'],
@@ -1072,7 +1072,7 @@ export const flows: Flow[] = [
       {
         title: 'Daftarkan siswa',
         action: 'Isi profil atau import Dapodik.',
-        system: 'ProductSchool memvalidasi NISN ganda.',
+        system: 'Sakolentra memvalidasi NISN ganda.',
         result: 'Profil terbentuk.',
         fields: [['Nama', 'Ahmad (contoh)', true], ['NISN', '0061234567']],
         badge: ['Draf', 'y'],
@@ -1082,7 +1082,7 @@ export const flows: Flow[] = [
       {
         title: 'Tempatkan kelas',
         action: 'Pilih VII-A.',
-        system: 'ProductSchool mencatat via StudentClassroom.',
+        system: 'Sakolentra mencatat via StudentClassroom.',
         result: 'Siswa resmi anggota VII-A.',
         fields: [['Kelas', 'VII-A']],
         badge: ['Aktif', 'g'],
@@ -1108,7 +1108,7 @@ export const flows: Flow[] = [
       {
         title: 'Lihat riwayat',
         action: 'Buka riwayat kelas siswa.',
-        system: 'ProductSchool merangkum perpindahan dan promosi.',
+        system: 'Sakolentra merangkum perpindahan dan promosi.',
         result: 'Riwayat terlihat per tahun.',
         fields: [['Riwayat', 'VII-A → VIII-B', true]],
         badge: ['Aktif', 'y'],
@@ -1144,7 +1144,7 @@ export const flows: Flow[] = [
       {
         title: 'Ambil snapshot',
         action: 'Jalankan analisis semester.',
-        system: 'ProductSchool menghitung tren dan peer benchmark.',
+        system: 'Sakolentra menghitung tren dan peer benchmark.',
         result: 'Grafik performa terbentuk.',
         fields: [['Semester', 'Ganjil', true]],
         badge: ['Proses', 'y'],
@@ -1154,7 +1154,7 @@ export const flows: Flow[] = [
       {
         title: 'Ikuti rekomendasi',
         action: 'Buka learning path yang disarankan.',
-        system: 'ProductSchool menyusun langkah perbaikan.',
+        system: 'Sakolentra menyusun langkah perbaikan.',
         result: 'Rencana tindak lanjut siap.',
         fields: [['Fokus', 'Matematika']],
         badge: ['Siap', 'g'],
@@ -1180,7 +1180,7 @@ export const flows: Flow[] = [
       {
         title: 'Pindai risiko',
         action: 'Jalankan penilaian dini.',
-        system: 'ProductSchool menilai indikator akademik, hadir, perilaku.',
+        system: 'Sakolentra menilai indikator akademik, hadir, perilaku.',
         result: 'Daftar risiko terbentuk.',
         fields: [['Dipindai', '320 siswa', true]],
         badge: ['Proses', 'y'],
@@ -1216,7 +1216,7 @@ export const flows: Flow[] = [
       {
         title: 'Daftarkan bulk',
         action: 'Pilih 20 siswa ke Pramuka.',
-        system: 'ProductSchool menyimpan bulk per tahun pelajaran.',
+        system: 'Sakolentra menyimpan bulk per tahun pelajaran.',
         result: 'Anggota tercatat.',
         fields: [['Ekskul', 'Pramuka', true], ['Anggota', '20']],
         badge: ['Draf', 'y'],
@@ -1226,7 +1226,7 @@ export const flows: Flow[] = [
       {
         title: 'Tampilkan di rapor',
         action: 'Kunci nilai ekskul.',
-        system: 'ProductSchool menautkan ke rapor semester.',
+        system: 'Sakolentra menautkan ke rapor semester.',
         result: 'Ekskul tercetak di rapor.',
         fields: [['Status', 'Terkunci']],
         badge: ['Terkunci', 'g'],
@@ -1252,7 +1252,7 @@ export const flows: Flow[] = [
       {
         title: 'Tarik rekap',
         action: 'Pilih periode semester.',
-        system: 'ProductSchool menghitung ringkasan per siswa.',
+        system: 'Sakolentra menghitung ringkasan per siswa.',
         result: 'Tabel rekap tampil.',
         fields: [['Periode', 'Ganjil', true]],
         badge: ['Proses', 'y'],
@@ -1360,7 +1360,7 @@ export const flows: Flow[] = [
       {
         title: 'Input guru',
         action: 'Isi profil guru baru.',
-        system: 'ProductSchool memvalidasi NIP ganda.',
+        system: 'Sakolentra memvalidasi NIP ganda.',
         result: 'Profil terbentuk.',
         fields: [['Nama', 'Ibu Sari (contoh)', true]],
         badge: ['Draf', 'y'],
@@ -1396,7 +1396,7 @@ export const flows: Flow[] = [
       {
         title: 'Input pegawai',
         action: 'Isi profil atau import massal.',
-        system: 'ProductSchool memvalidasi duplikat.',
+        system: 'Sakolentra memvalidasi duplikat.',
         result: 'Profil terbentuk.',
         fields: [['Nama', 'Bpk. Dedi (contoh)', true]],
         badge: ['Draf', 'y'],
@@ -1406,7 +1406,7 @@ export const flows: Flow[] = [
       {
         title: 'Set posisi',
         action: 'Pilih posisi dan unit.',
-        system: 'ProductSchool menautkan ke struktur SDM.',
+        system: 'Sakolentra menautkan ke struktur SDM.',
         result: 'Pegawai siap dijadwalkan.',
         fields: [['Posisi', 'Staf TU']],
         badge: ['Aktif', 'g'],
@@ -1432,7 +1432,7 @@ export const flows: Flow[] = [
       {
         title: 'Ajukan cuti',
         action: 'Isi tanggal dan alasan.',
-        system: 'ProductSchool memeriksa sisa kuota.',
+        system: 'Sakolentra memeriksa sisa kuota.',
         result: 'Pengajuan masuk antre.',
         fields: [['Tanggal', '12–14 Des', true], ['Alasan', 'Keluarga']],
         badge: ['Menunggu', 'y'],
@@ -1468,7 +1468,7 @@ export const flows: Flow[] = [
       {
         title: 'Petakan SDM',
         action: 'Susun posisi dan jabatan.',
-        system: 'ProductSchool memvalidasi kelengkapan unit.',
+        system: 'Sakolentra memvalidasi kelengkapan unit.',
         result: 'Struktur terbentuk.',
         fields: [['Unit', 'TU + Guru', true]],
         badge: ['Draf', 'y'],
@@ -1504,7 +1504,7 @@ export const flows: Flow[] = [
       {
         title: 'Set komponen',
         action: 'Isi pokok dan tunjangan.',
-        system: 'ProductSchool memvalidasi rumus.',
+        system: 'Sakolentra memvalidasi rumus.',
         result: 'Aturan tersimpan.',
         fields: [['Pokok', 'Rp 3.000.000', true], ['Tunjangan', 'Struktural']],
         badge: ['Draf', 'y'],
@@ -1540,7 +1540,7 @@ export const flows: Flow[] = [
       {
         title: 'Buka periode',
         action: 'Buat run Desember 2026.',
-        system: 'ProductSchool mengikat ke tahun pelajaran.',
+        system: 'Sakolentra mengikat ke tahun pelajaran.',
         result: 'Periode draft terbentuk.',
         fields: [['Periode', 'Des 2026', true]],
         badge: ['Draft', 'y'],
@@ -1576,7 +1576,7 @@ export const flows: Flow[] = [
       {
         title: 'Pilih run',
         action: 'Buka run November.',
-        system: 'ProductSchool memuat rincian tersimpan.',
+        system: 'Sakolentra memuat rincian tersimpan.',
         result: 'Rincian tampil.',
         fields: [['Run', 'Nov 2026', true]],
         badge: ['Processed', 'y'],
@@ -1612,7 +1612,7 @@ export const flows: Flow[] = [
       {
         title: 'Generate slip',
         action: 'Generate untuk run Desember.',
-        system: 'ProductSchool merender PDF per pegawai.',
+        system: 'Sakolentra merender PDF per pegawai.',
         result: '45 PDF terbentuk.',
         fields: [['Run', 'Des 2026', true]],
         badge: ['Proses', 'y'],
@@ -1648,7 +1648,7 @@ export const flows: Flow[] = [
       {
         title: 'Generate tagihan',
         action: 'Jalankan generate bulan ini.',
-        system: 'ProductSchool membuat tagihan per siswa.',
+        system: 'Sakolentra membuat tagihan per siswa.',
         result: 'Ribuan tagihan terbentuk.',
         fields: [['Bulan', 'Desember', true]],
         badge: ['Proses', 'y'],
@@ -1720,7 +1720,7 @@ export const flows: Flow[] = [
       {
         title: 'Pilih metode',
         action: 'Pilih QRIS.',
-        system: 'ProductSchool meminta kode ke gateway.',
+        system: 'Sakolentra meminta kode ke gateway.',
         result: 'QR tampil.',
         fields: [['Metode', 'QRIS', true]],
         badge: ['Proses', 'y'],
@@ -1792,7 +1792,7 @@ export const flows: Flow[] = [
       {
         title: 'Jadwalkan',
         action: 'Pilih tagihan H-3 jatuh tempo.',
-        system: 'ProductSchool mengantrekan job pengingat.',
+        system: 'Sakolentra mengantrekan job pengingat.',
         result: 'Antrean terbentuk.',
         fields: [['Target', '48 penunggak', true]],
         badge: ['Antre', 'y'],
@@ -1828,7 +1828,7 @@ export const flows: Flow[] = [
       {
         title: 'Tangkap lead',
         action: 'Formulir landing diisi calon.',
-        system: 'ProductSchool menyimpan lead baru.',
+        system: 'Sakolentra menyimpan lead baru.',
         result: 'Lead masuk pipeline.',
         fields: [['Nama', 'Bunda Rina (contoh)', true]],
         badge: ['Baru', 'y'],
@@ -1864,7 +1864,7 @@ export const flows: Flow[] = [
       {
         title: 'Tulis artikel',
         action: 'Buat berita kegiatan.',
-        system: 'ProductSchool menyimpan sebagai draf.',
+        system: 'Sakolentra menyimpan sebagai draf.',
         result: 'Draf siap review.',
         fields: [['Judul', 'Juara OSN (contoh)', true]],
         badge: ['Draf', 'y'],
@@ -1900,7 +1900,7 @@ export const flows: Flow[] = [
       {
         title: 'Unggah media',
         action: 'Unggah foto kegiatan.',
-        system: 'ProductSchool menyimpan ke media library.',
+        system: 'Sakolentra menyimpan ke media library.',
         result: 'Foto tersedia.',
         fields: [['Foto', '12 berkas', true]],
         badge: ['Draf', 'y'],
@@ -1972,7 +1972,7 @@ export const flows: Flow[] = [
       {
         title: 'Sambungkan nomor',
         action: 'Isi phone ID dan token.',
-        system: 'ProductSchool memverifikasi ke Meta.',
+        system: 'Sakolentra memverifikasi ke Meta.',
         result: 'Koneksi hijau.',
         fields: [['Phone ID', '•••456', true]],
         badge: ['Draf', 'y'],
@@ -2008,7 +2008,7 @@ export const flows: Flow[] = [
       {
         title: 'Aktifkan jenis',
         action: 'Centang tagihan, hadir, rapor.',
-        system: 'ProductSchool mendaftarkan trigger.',
+        system: 'Sakolentra mendaftarkan trigger.',
         result: 'Trigger aktif.',
         fields: [['Jenis aktif', '3/3', true]],
         badge: ['Draf', 'y'],
@@ -2080,7 +2080,7 @@ export const flows: Flow[] = [
       {
         title: 'Siapkan post',
         action: 'Pilih foto dan caption.',
-        system: 'ProductSchool mengunggah media ke graph.',
+        system: 'Sakolentra mengunggah media ke graph.',
         result: 'Media terunggah.',
         fields: [['Caption', 'Juara OSN! (contoh)', true]],
         badge: ['Draf', 'y'],
@@ -2116,7 +2116,7 @@ export const flows: Flow[] = [
       {
         title: 'Susun carousel',
         action: 'Pilih 5 foto.',
-        system: 'ProductSchool mengantrekan job.',
+        system: 'Sakolentra mengantrekan job.',
         result: 'Jadwal terkunci.',
         fields: [['Foto', '5', true], ['Tayang', 'Jumat 16:00']],
         badge: ['Antre', 'y'],
@@ -2152,7 +2152,7 @@ export const flows: Flow[] = [
       {
         title: 'Tulis draf',
         action: 'Susun caption + media.',
-        system: 'ProductSchool menyimpan draf.',
+        system: 'Sakolentra menyimpan draf.',
         result: 'Draf aman.',
         fields: [['Draf', 'Pengumuman', true]],
         badge: ['Draf', 'y'],
@@ -2188,7 +2188,7 @@ export const flows: Flow[] = [
       {
         title: 'Sinkron profil',
         action: 'Tarik data akun.',
-        system: 'ProductSchool menyimpan username dan foto.',
+        system: 'Sakolentra menyimpan username dan foto.',
         result: 'Profil mutakhir.',
         fields: [['Username', '@sekolah', true]],
         badge: ['Draf', 'y'],
@@ -2224,7 +2224,7 @@ export const flows: Flow[] = [
       {
         title: 'Sambung Page',
         action: 'Pilih Page sekolah.',
-        system: 'ProductSchool menyimpan token Page.',
+        system: 'Sakolentra menyimpan token Page.',
         result: 'Siap publish.',
         fields: [['Page', 'Sekolah (contoh)', true]],
         badge: ['Draf', 'y'],
@@ -2296,7 +2296,7 @@ export const flows: Flow[] = [
       {
         title: 'Tarik rekap',
         action: 'Pilih bulan berjalan.',
-        system: 'ProductSchool merangkum masuk dan tunggakan.',
+        system: 'Sakolentra merangkum masuk dan tunggakan.',
         result: 'Angka tampil.',
         fields: [['Bulan', 'Desember', true]],
         badge: ['Proses', 'y'],
@@ -2548,7 +2548,7 @@ export const flows: Flow[] = [
       {
         title: 'Buat akun',
         action: 'Isi nama dan email.',
-        system: 'ProductSchool memvalidasi duplikat.',
+        system: 'Sakolentra memvalidasi duplikat.',
         result: 'Akun tersimpan.',
         fields: [['Email', 'guru@sekolah.id', true]],
         badge: ['Draf', 'y'],
@@ -2584,7 +2584,7 @@ export const flows: Flow[] = [
       {
         title: 'Buat role',
         action: 'Beri nama Wali Kelas.',
-        system: 'ProductSchool menyimpan role.',
+        system: 'Sakolentra menyimpan role.',
         result: 'Role tersedia.',
         fields: [['Role', 'Wali Kelas', true]],
         badge: ['Draf', 'y'],
@@ -2728,7 +2728,7 @@ export const flows: Flow[] = [
       {
         title: 'Buat tugas',
         action: 'Isi judul dan deadline.',
-        system: 'ProductSchool mencatat dependensi.',
+        system: 'Sakolentra mencatat dependensi.',
         result: 'Tugas masuk papan.',
         fields: [['Tugas', 'Siapkan rapor', true]],
         badge: ['Baru', 'y'],
@@ -2980,7 +2980,7 @@ export const flows: Flow[] = [
       {
         title: 'Daftarkan kamera',
         action: 'Isi stream gerbang utama.',
-        system: 'ProductSchool menyimpan endpoint.',
+        system: 'Sakolentra menyimpan endpoint.',
         result: 'Kamera online.',
         fields: [['Kamera', 'Gerbang', true]],
         badge: ['Draf', 'y'],
@@ -3019,7 +3019,7 @@ export const flows: Flow[] = [
       {
         title: 'Buat tagihan',
         action: 'Admin membuat tagihan SPP atau tunggakan di dashboard.',
-        system: 'ProductSchool mencatat payment di database.',
+        system: 'Sakolentra mencatat payment di database.',
         result: 'Tagihan tersimpan, belum ada VA.',
         fields: [
           ['Siswa', 'Ahmad (contoh)', true],

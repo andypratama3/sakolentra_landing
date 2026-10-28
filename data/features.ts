@@ -1,7 +1,7 @@
 import type { Feature } from '@/lib/types';
 
 /**
- * Feature inventory audited from the ProductSchool repository
+ * Feature inventory audited from the Sakolentra repository
  * (Laravel Brain, Session 58). Every capability below maps to a route,
  * controller, service, or model that exists in the codebase.
  */
@@ -494,7 +494,7 @@ export const features: Feature[] = [
     name: 'Publikasi Instagram',
     category: 'Instagram',
     icon: 'instagram',
-    description: 'Publish feed dari ProductSchool.',
+    description: 'Publish feed dari Sakolentra.',
     users: 'Admin humas',
     flow: 'ig-terbit',
     capabilities: ['InstagramPublisherService', 'Feed post', 'Media graph'],

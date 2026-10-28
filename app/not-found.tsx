@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { inventory } from '@/data/pricing';
 
-export const metadata = { title: 'Halaman tidak ditemukan' };
+export const metadata = {
+  title: 'Halaman tidak ditemukan',
+  description: 'Alamat yang Anda buka tidak tersedia. Kembali ke beranda Sakolentra untuk menjelajahi fitur dan alur sistem sekolah.',
+};
 
 export default function NotFound() {
   return (
@@ -19,7 +22,7 @@ export default function NotFound() {
     >
       <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)' }}>Halaman tidak ditemukan</h1>
       <p className="mu" style={{ maxWidth: '46ch' }}>
-        Alamat yang Anda buka tidak ada di situs ProductSchool. Kembali ke halaman utama untuk
+        Alamat yang Anda buka tidak ada di situs Sakolentra. Kembali ke halaman utama untuk
         menjelajahi {inventory.features} fitur.
       </p>
       <Link className="btn p" href="/">

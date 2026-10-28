@@ -12,7 +12,7 @@ export default function CTASection() {
       </div>
       <h2 className="rv">Siap membawa sekolah ke satu sistem?</h2>
       <p className="lead mu rv">
-        ProductSchool adalah source code lengkap sistem sekolah — bukan SaaS terkunci. Kirim
+        Sakolentra adalah source code lengkap sistem sekolah — bukan SaaS terkunci. Kirim
         pesan, atau jadwalkan panggilan langsung. Inventori terkini: {inventory.features} fitur
         dan {inventory.flows} alur interaktif.
       </p>

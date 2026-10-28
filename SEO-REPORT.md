@@ -181,3 +181,34 @@ Bagian ini ditambahkan setelah pengecekan ulang build produksi lokal dan artefak
 ## Drift data yang perlu diketahui
 - `data/flows.ts` bertambah menjadi 72 alur (laporan awal menyebut 9); `SITE_DESCRIPTION` kini 144 char dan menyebut 72 alur.
 - JSON-LD kini memuat `Offer` per paket berharga dan `sameAs` sosial dari `lib/site.ts` (perubahan di luar track SEO awal). Angka/harga tetap harus diverifikasi pemilik konten.
+
+---
+
+# Pembaruan penuh 2026-10-28 — brand Sakolentra + SEO on-page
+
+Rename merek penuh di seluruh permukaan publik (metadata, JSON-LD, OG/Twitter, manifest, 404, email kontak, copy komponen, dan data fitur/alur). Dokumen audit, `SEO-REPORT.md` bagian historis, `SYNC-REPORT.md`, dan `IMPROVE-REPORT.md` sengaja tidak diubah karena merupakan catatan bertanggal.
+
+## Yang berubah
+
+| Area | File | Hasil |
+|---|---|---|
+| Identitas merek | `lib/seo.ts` | `SITE_NAME`/`SITE_SHORT_NAME` = `Sakolentra`; title 40 char; description 141 char; `SITE_KEYWORDS` |
+| Metadata root | `app/layout.tsx` | `keywords`, `authors`, `creator`, `publisher`, `category`, `formatDetection`, `appleWebApp` |
+| Structured data | `lib/seo.ts` | `Organization` + `logo` ImageObject + `contactPoint`; `WebPage`; `SoftwareApplication` (`featureList` 14 kategori, `screenshot`, `offers` 5 paket); `Person` dengan `@id` |
+| Gambar sosial | `app/opengraph-image.tsx` | 1200×630, mark S Wisuda, wordmark + tagline, `75 fitur · 72 alur`, host produksi; alt baru |
+| Manifest | `app/manifest.ts` | `name`, `short_name`, `lang: id`, `categories`, ikon 512/180; terbit di `/manifest.webmanifest` |
+| 404 | `app/not-found.tsx` | Copy Sakolentra, description, `noindex` dari Next (tanpa duplikasi meta) |
+| Email/form | `app/actions/contact.ts` | Heading `Lead Sakolentra`, subject `[Sakolentra]` |
+| Copy & data | `components/*`, `data/features.ts`, `data/flows.ts`, `README.md`, `.env.example` | Tidak ada lagi `ProductSchool` di HTML publik |
+| Inventory fallback | `data/pricing.ts` | `188` route, `233` permission (bukan angka lama 226/380) |
+| Paket | `package.json`, `package-lock.json` | `sakolentra-sales` |
+
+## Verifikasi build lokal
+
+- `npm run typecheck` lolos; `npm run build` lolos, 11 rute statis.
+- HTML produksi: `lang=id`, 1 `h1`, 0 gambar tanpa alt, `ProductSchool` = 0 kemunculan, metadata lengkap.
+- Canonical `https://sakolentra.vercel.app`; robots `index, follow`; manifest, ikon 48/512/180, dan theme-color terpasang.
+- JSON-LD: 1 blok valid, 5 tipe, 5 `Offer` IDR, `featureList` 14 kategori.
+- OG image: 200 `image/png`, 1200×630, ~87 KB; `og:image:alt` dan `twitter:image:alt` terisi.
+- 404: status 404 dan `noindex` (satu tag).
+- `robots.txt`: allow all + sitemap produksi; `sitemap.xml`: 1 URL produksi.

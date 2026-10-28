@@ -8,7 +8,7 @@ export default function AboutSection() {
       <p className="lead mu rv">
         Saya Andy Pratama, Fullstack Software Engineer dari Samarinda dengan 3+ tahun pengalaman
         membangun aplikasi web produksi (Next.js, React, TypeScript, Laravel, API, DevOps).
-        ProductSchool lahir dari kebutuhan nyata operasional sekolah: akademik, keuangan,
+        Sakolentra lahir dari kebutuhan nyata operasional sekolah: akademik, keuangan,
         kehadiran, hingga komunikasi orang tua dalam satu codebase.
       </p>
       <div className="row rv">

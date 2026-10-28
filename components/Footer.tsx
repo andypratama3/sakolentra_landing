@@ -17,7 +17,7 @@ export default function Footer() {
         <a href="#tentang">Tentang</a>
         <a href="#cta">Kontak</a>
       </nav>
-      <span className="mu">© 2026 ProductSchool</span>
+      <span className="mu">© 2026 Sakolentra</span>
     </footer>
   );
 }

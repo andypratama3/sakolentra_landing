@@ -188,7 +188,7 @@ export default function EcosystemMapClient({ categories, features }: Props) {
 
             <div className="nd c" style={{ left: '50%', top: '50%' }} aria-hidden="true">
               <Icon name="graduation-cap" aria-hidden="true" />
-              ProductSchool
+              Sakolentra
             </div>
 
             {categories.map((c, i) => (

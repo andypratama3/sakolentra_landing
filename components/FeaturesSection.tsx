@@ -116,7 +116,7 @@ export default function FeaturesSection() {
     <section className="s" id="fit">
       <h2 className="rv">Semua fitur dalam satu peta.</h2>
       <p className="mu rv" style={{ marginTop: 10 }}>
-        {features.length} fitur dari repository ProductSchool.
+        {features.length} fitur dari repository Sakolentra.
       </p>
       <div className="chips" role="group" aria-label="Filter kategori">
         {CHIPS.map((chip) => (

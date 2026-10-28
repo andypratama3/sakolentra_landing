@@ -8,8 +8,8 @@ export const inventory = {
   features: features.length,
   flows: flows.length,
   categories: categories.length,
-  apiRoutes: stats.find((s) => s.label === 'Route API')?.value ?? '226',
-  permissions: stats.find((s) => s.label === 'Permission RBAC')?.value ?? '380',
+  apiRoutes: stats.find((s) => s.label === 'Route API')?.value ?? '188',
+  permissions: stats.find((s) => s.label === 'Permission RBAC')?.value ?? '233',
 } as const;
 
 export type PriceTier = {

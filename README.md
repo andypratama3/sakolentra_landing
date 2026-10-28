@@ -1,6 +1,6 @@
-# ProductSchool — Situs Penjualan Sistem Sekolah
+# Sakolentra — Situs Penjualan Sistem Sekolah
 
-Situs marketing satu halaman untuk **ProductSchool**: source code lengkap sistem
+Situs marketing satu halaman untuk **Sakolentra**: source code lengkap sistem
 sekolah terintegrasi (akademik, siswa, staf, keuangan, kehadiran, komunikasi,
 CMS). Pengunjung menjelajahi fitur, melihat peta ekosistem, lalu mencoba
 simulator alur interaktif dari awal sampai hasil.
@@ -10,7 +10,7 @@ simulator alur interaktif dari awal sampai hasil.
 - **Hero** — ringkasan + mock dashboard + tombol ke fitur dan alur.
 - **Angka utama** — 75 fitur, 14 kategori inti, 72 alur interaktif,
   188 endpoint API, 233 permission unik.
-- **Peta ekosistem** — 14 node kategori mengelilingi pusat ProductSchool.
+- **Peta ekosistem** — 14 node kategori mengelilingi pusat Sakolentra.
   Node default **Akademik**; pertama kali peta terlihat ada intro sekali jalan
   (aktif ikut node satu-satu lalu berhenti di Akademik). Panel info mengikuti
   node yang dipilih (maks 6 fitur + sisa hitungan).

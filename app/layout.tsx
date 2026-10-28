@@ -4,18 +4,31 @@ import JsonLd from '@/components/JsonLd';
 import {
   INDEXABLE,
   SITE_DESCRIPTION,
+  SITE_KEYWORDS,
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
   jsonLd,
 } from '@/lib/seo';
+import { SOCIAL } from '@/lib/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_TITLE, template: `%s | ${SITE_NAME}` },
   description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
   applicationName: SITE_NAME,
+  category: 'education',
+  authors: [{ name: 'Andy Pratama', url: SOCIAL.cal }],
+  creator: 'Andy Pratama',
+  publisher: SITE_NAME,
   alternates: { canonical: '/' },
+  formatDetection: { email: false, address: false, telephone: false },
+  appleWebApp: {
+    capable: true,
+    title: SITE_NAME,
+    statusBarStyle: 'default',
+  },
   openGraph: {
     type: 'website',
     locale: 'id_ID',
