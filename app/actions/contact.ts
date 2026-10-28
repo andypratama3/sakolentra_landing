@@ -30,7 +30,7 @@ export async function submitContact(
   formData: FormData,
 ): Promise<ContactState> {
   // Honeypot — bots fill this; humans never see it.
-  if (str(formData.get('website'), 80)) {
+  if (str(formData.get('hp_website'), 80)) {
     return { ok: true, message: 'Pesan terkirim. Kami akan membalas segera.' };
   }
 

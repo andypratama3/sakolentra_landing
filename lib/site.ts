@@ -1,10 +1,17 @@
 /** Public + server contact / booking constants. */
 
+function envText(value: string | undefined) {
+  const trimmed = value?.trim();
+  if (!trimmed) return '';
+  const quoted = trimmed.match(/^(['"])([\s\S]*)\1$/);
+  return (quoted ? quoted[2] : trimmed).trim();
+}
+
 export const CONTACT_EMAIL =
-  process.env.CONTACT_TO_EMAIL?.trim() || 'andypratama1211@gmail.com';
+  envText(process.env.CONTACT_TO_EMAIL) || 'andypratama1211@gmail.com';
 
 export const RESEND_FROM =
-  process.env.RESEND_FROM_EMAIL?.trim() ||
+  envText(process.env.RESEND_FROM_EMAIL) ||
   'Sakolentra <onboarding@resend.dev>';
 
 /** Cal.com username — profile lists 15m and 30m meetings. */

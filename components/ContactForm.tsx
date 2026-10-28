@@ -19,11 +19,16 @@ export default function ContactForm() {
     <form className="contact-form" action={action} noValidate>
       <input
         type="text"
-        name="website"
+        name="hp_website"
         tabIndex={-1}
         autoComplete="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        readOnly
         aria-hidden="true"
         className="hp"
+        data-lpignore="true"
+        data-1p-ignore
       />
 
       <div className="field">
