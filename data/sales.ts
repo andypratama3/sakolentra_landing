@@ -8,19 +8,19 @@ export const stats: Stat[] = [
   { value: String(categories.length), label: 'Kategori inti' },
   { value: String(flows.length), label: 'Alur interaktif' },
   { value: '188', label: 'Route API' },
-  { value: '233', label: 'Permission RBAC' },
+  { value: '292', label: 'Permission RBAC' },
 ];
 
 export const audiences: Audience[] = [
   {
     icon: 'code-2',
     title: 'Source code milik Anda',
-    body: 'Laravel + Next.js, tanpa vendor lock-in. Kode dibuka, dimodifikasi, dan di-deploy sesuai kebutuhan.',
+    body: 'Laravel + React, tanpa vendor lock-in. Kode dibuka, dimodifikasi, dan di-deploy sesuai kebutuhan.',
   },
   {
     icon: 'shield',
     title: 'Keamanan berlapis',
-    body: 'Sanctum auth, 34 policy, 233 permission unik, data scoping per kelas, dan audit trail.',
+    body: 'Sanctum auth, 37 policy, 292 permission unik, data scoping per kelas, dan audit trail.',
   },
   {
     icon: 'network',
@@ -30,14 +30,14 @@ export const audiences: Audience[] = [
 ];
 
 export const stack: StackItem[] = [
-  'Laravel 11 (PHP 8.3)',
-  'Next.js 15 + React 19',
-  'MySQL / PostgreSQL',
+  'Laravel 12 (PHP 8.3)',
+  'Blade + Vite + React 19',
+  'MySQL 8',
   'Midtrans Snap & Core API',
   'WhatsApp Cloud API',
-  'Google Maps & KML geofence',
+  'Leaflet/OpenStreetMap & KML geofence',
   'Spatie Permission (RBAC)',
   'Laravel Sanctum',
+  'Laravel Reverb (realtime)',
   'Queue workers (jobs terjadwal)',
-  'Sentry monitoring',
 ];

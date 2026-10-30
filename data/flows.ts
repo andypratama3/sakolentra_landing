@@ -11,7 +11,7 @@ export const flows: Flow[] = [
     leftLabel: 'Panel admin',
     rightLabel: 'Website publik',
     evidence:
-      'CMS dashboard → Draft status → API /v2/* → Website sekolah. Evidence: routes/web.php CMS routes, CmsController, API v2 landing.',
+      'CMS dashboard → Draft status → API /v2/* → Website sekolah. Evidence: routes/web.php CMS routes, PostController, API v2 landing.',
     results: [
       'Status konten berubah dari draft menjadi terbit.',
       'Halaman pengumuman di website sekolah.',
@@ -169,7 +169,7 @@ export const flows: Flow[] = [
     leftLabel: 'Sakolentra',
     rightLabel: 'Meta dan Instagram',
     evidence:
-      'OAuth Meta → cek akun profesional → ID + username + foto. Evidence: integrations routes, InstagramOAuthController, InstagramAccount model.',
+      'OAuth Meta → cek akun profesional → ID + username + foto. Evidence: integrations routes, InstagramIntegrationsController, InstagramAccount model.',
     results: [
       'Akun Instagram profesional terhubung ke Sakolentra.',
       'Halaman Integrasi Instagram di Sakolentra.',
@@ -2632,13 +2632,13 @@ export const flows: Flow[] = [
         action: 'Simpan hasil pindai.',
         system: 'Permission tersimpan rapi.',
         result: 'Siap ditempel ke role.',
-        fields: [['Permission', '288']],
+        fields: [['Permission', '292']],
         badge: ['Sinkron', 'g'],
         button: 'Selesai',
         publicView: {
           kind: 'page',
           label: 'Sinkron',
-          headline: '288 permission sinkron',
+          headline: '292 permission sinkron',
           body: 'Siap ditempel ke role.',
         },
       },
@@ -2830,7 +2830,7 @@ export const flows: Flow[] = [
     leftLabel: 'Panel sistem',
     rightLabel: 'Status job',
     evidence:
-      'ProcessRaporBatchJob → GenerateExportJob → Queue notifikasi. Evidence: app/Jobs (24 job), config/queue.php.',
+      'ProcessRaporBatchJob → GenerateExportJob → Queue notifikasi. Evidence: app/Jobs (30 job), config/queue.php.',
     results: ['Job terdispatch.', 'Selesai tanpa blokir UI.'],
     steps: [
       {

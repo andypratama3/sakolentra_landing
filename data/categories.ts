@@ -20,7 +20,7 @@ const SEED: Array<Omit<Category, 'x' | 'y'>> = [
   { id: 'Analitik', label: 'Analitik', icon: 'trending-up', description: 'Dashboard real-time, laporan akademik dan keuangan.' },
   { id: 'AI', label: 'AI', icon: 'sparkles', description: 'Asisten, template dokumen, balasan cerdas.' },
   { id: 'Administrasi', label: 'Administrasi', icon: 'shield', description: 'User, role, permission, Sanctum, RBAC.' },
-  { id: 'Sistem', label: 'Sistem', icon: 'server-cog', description: 'REST API, job queue, Reverb, Sentry.' },
+  { id: 'Sistem', label: 'Sistem', icon: 'server-cog', description: 'REST API, job queue, Reverb, system monitoring.' },
 ];
 
 export const categories: Category[] = SEED.map((category, index, all) => {

@@ -1,8 +1,12 @@
 # Laporan Sinkronisasi — Situs vs Aplikasi ProductSchool
 
-Tanggal: 2026-10-06. Sumber app: `ProductSchool/src` (Laravel, hanya baca statis;
-`artisan` tidak dijalankan karena butuh DB). Angka situs dari `data/*` tidak diubah
-(di luar wewenang; keputusan pemilik konten).
+Tanggal audit: 2026-10-06. Sumber app: `ProductSchool/src` (Laravel, hanya baca statis;
+`artisan` tidak dijalankan karena butuh DB).
+
+> Status 2026-10-30: temuan di bawah sudah diselaraskan ke source aplikasi terbaru
+> (`Sakolentra/src`, HEAD `484fa3c8`): Laravel 12, Blade + Vite + React 19,
+> MySQL 8, Leaflet/OpenStreetMap, 37 policy, 292 permission, 188 route API,
+> tanpa klaim Sentry. Angka di tabel adalah snapshot audit lama.
 
 ## Angka utama: situs vs realita
 

@@ -9,5 +9,5 @@ export const inventory = {
   flows: flows.length,
   categories: categories.length,
   apiRoutes: stats.find((s) => s.label === 'Route API')?.value ?? '188',
-  permissions: stats.find((s) => s.label === 'Permission RBAC')?.value ?? '233',
+  permissions: stats.find((s) => s.label === 'Permission RBAC')?.value ?? '292',
 } as const;

@@ -9,7 +9,7 @@ simulator alur interaktif dari awal sampai hasil.
 
 - **Hero** — ringkasan + mock dashboard + tombol ke fitur dan alur.
 - **Angka utama** — 75 fitur, 14 kategori inti, 72 alur interaktif,
-  188 endpoint API, 233 permission unik.
+  188 endpoint API, 292 permission unik.
 - **Peta ekosistem** — 14 node kategori mengelilingi pusat Sakolentra.
   Node default **Akademik**; pertama kali peta terlihat ada intro sekali jalan
   (aktif ikut node satu-satu lalu berhenti di Akademik). Panel info mengikuti
