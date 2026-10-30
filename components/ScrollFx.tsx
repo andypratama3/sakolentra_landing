@@ -35,7 +35,7 @@ export default function ScrollFx() {
           ease: 'elastic.out(1, 0.6)',
           clearProps: 'transform',
         });
-        gsap.from('#hero .r', {
+        gsap.from('#hero .r:not(h1)', {
           autoAlpha: 0,
           y: 32,
           duration: 0.9,
@@ -61,6 +61,7 @@ export default function ScrollFx() {
             y: 24,
             duration: 0.8,
             scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            immediateRender: false,
             ease: 'power2.out',
             clearProps: 'opacity,visibility,transform',
           });
@@ -74,6 +75,7 @@ export default function ScrollFx() {
           stagger: 0.05,
           clearProps: 'opacity,visibility,strokeWidth',
           scrollTrigger: { trigger: '#map', start: 'top 75%', once: true },
+          immediateRender: false,
           ease: 'power2.out',
         });
         gsap.from('.nd:not(.c)', {
@@ -82,6 +84,7 @@ export default function ScrollFx() {
           stagger: 0.08,
           duration: 0.5,
           scrollTrigger: { trigger: '#map', start: 'top 75%', once: true },
+          immediateRender: false,
           // Clear transform too: resting transform comes from CSS
           // translate(-50%, -50%), and keeping the inline one would
           // override the :hover lift forever.
@@ -97,6 +100,7 @@ export default function ScrollFx() {
           duration: 0.7,
           ease: 'elastic.out(1, 0.5)',
           scrollTrigger: { trigger: '#done', start: 'top 60%', once: true },
+          immediateRender: false,
           clearProps: 'opacity,visibility,transform',
         });
         gsap.from('#cta .ck', {
@@ -105,6 +109,7 @@ export default function ScrollFx() {
           duration: 0.7,
           ease: 'elastic.out(1, 0.5)',
           scrollTrigger: { trigger: '#cta', start: 'top 70%', once: true },
+          immediateRender: false,
           clearProps: 'opacity,visibility,transform',
         });
 
@@ -115,6 +120,7 @@ export default function ScrollFx() {
           duration: 0.7,
           stagger: 0.1,
           scrollTrigger: { trigger: '#stats', start: 'top 80%', once: true },
+          immediateRender: false,
           ease: 'power2.out',
           clearProps: 'opacity,visibility,transform',
         });
@@ -125,6 +131,7 @@ export default function ScrollFx() {
           stagger: 0.1,
           delay: 0.1,
           scrollTrigger: { trigger: '#stats', start: 'top 80%', once: true },
+          immediateRender: false,
           ease: 'power2.out',
           clearProps: 'opacity,visibility,transform',
         });
@@ -136,6 +143,7 @@ export default function ScrollFx() {
           duration: 0.7,
           stagger: 0.1,
           scrollTrigger: { trigger: '.bene', start: 'top 80%', once: true },
+          immediateRender: false,
           ease: 'power2.out',
           clearProps: 'opacity,visibility,transform',
         });

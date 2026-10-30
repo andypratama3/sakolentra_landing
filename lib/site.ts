@@ -38,9 +38,15 @@ export const CAL_EVENTS = [
   },
 ] as const;
 
+export const PORTFOLIO_URL = 'https://www.andypratama.studio/';
+
 export const SOCIAL = {
+  portfolio: PORTFOLIO_URL,
   github: 'https://github.com/andypratama3',
   linkedin: 'https://www.linkedin.com/in/andypratama3',
+  jobstreet: 'https://id.jobstreet.com/id/profiles/andy-pratama-DZqBM5ZkPC',
+  instagram: 'https://www.instagram.com/andypratama3_',
+  x: 'https://x.com/andypratama3_',
   email: `mailto:${CONTACT_EMAIL}`,
   cal: CAL_PROFILE_URL,
 } as const;

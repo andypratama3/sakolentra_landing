@@ -28,7 +28,7 @@ export default function AboutSection() {
           className="btn"
           href={SOCIAL.github}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
           aria-label="GitHub Andy Pratama"
         >
           <Icon name="github" />
@@ -38,7 +38,7 @@ export default function AboutSection() {
           className="btn"
           href={SOCIAL.linkedin}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
           aria-label="LinkedIn Andy Pratama"
         >
           <Icon name="link" />
@@ -49,6 +49,23 @@ export default function AboutSection() {
           {CONTACT_EMAIL}
         </a>
       </div>
+      <a
+        className="portfolio-card rv"
+        href={SOCIAL.portfolio}
+        target="_blank"
+        rel="me noopener noreferrer"
+      >
+        <span className="portfolio-card-ic" aria-hidden="true">
+          <Icon name="globe" />
+        </span>
+        <span className="portfolio-card-copy">
+          <strong>Portofolio &amp; studi kasus</strong>
+          <span>Proyek lain, arsitektur, dan tulisan teknis di andypratama.studio</span>
+        </span>
+        <span className="portfolio-card-go" aria-hidden="true">
+          andypratama.studio <span aria-hidden="true">↗</span>
+        </span>
+      </a>
     </section>
   );
 }

@@ -48,12 +48,7 @@ export default function FeatureDialog() {
 
   return (
     <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 45,
-        background: 'rgba(0,0,0,.5)',
-      }}
+      className="fd-overlay"
       onClick={(e) => {
         if (e.target === e.currentTarget) setId(null);
       }}
@@ -62,45 +57,30 @@ export default function FeatureDialog() {
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Detail fitur"
-        className="side"
-        style={{
-          position: 'fixed',
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: 'min(860px, 100vw)',
-          background: 'var(--bg)',
-          borderLeft: '1px solid var(--bd)',
-          boxShadow: '-4px 0 24px rgba(0,0,0,0.1)',
-          display: 'flex',
-          flexDirection: 'column',
-          overflow: 'hidden',
-          zIndex: 1000
-        }}
+        aria-labelledby="fd-title"
+        className="side fd-panel"
       >
-        <div style={{ padding: '20px 28px', borderBottom: '1px solid var(--bd)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--sf)' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--mu)', fontSize: '0.85rem', fontWeight: 600, marginBottom: 4 }}>
+        <div className="fd-head">
+          <div className="fd-head-copy">
+            <div className="fd-kicker">
               <Icon name={feature.icon} />
               {feature.category}
             </div>
-            <h2 style={{ fontSize: '1.6rem', margin: 0 }}>{feature.name}</h2>
+            <h2 id="fd-title" className="fd-title">{feature.name}</h2>
           </div>
           <button
             ref={closeRef}
-            className="ib x"
+            className="ib x fd-close"
             aria-label="Tutup"
             onClick={() => setId(null)}
-            style={{ background: 'var(--bd)', borderRadius: '50%' }}
           >
             <Icon name="x" />
           </button>
         </div>
 
-        <div style={{ flex: 1, display: 'flex', overflow: 'hidden', flexDirection: 'row' }}>
+        <div className="fd-body">
           {/* Left: Interactive Visual Preview */}
-          <div style={{ flex: 1, background: 'var(--sf2)', borderRight: '1px solid var(--bd)', padding: 28, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
+          <div className="fd-preview">
             <div style={{ marginBottom: 16 }}>
               <h3 style={{ fontSize: '0.95rem', margin: '0 0 8px' }}>Pratinjau Antarmuka</h3>
               <p className="mu" style={{ fontSize: '0.85rem', margin: 0 }}>Ilustrasi fungsi utama fitur ini di dalam sistem.</p>
@@ -125,12 +105,12 @@ export default function FeatureDialog() {
           </div>
 
           {/* Right: Details & Actions */}
-          <div style={{ width: 380, padding: 32, overflowY: 'auto', background: 'var(--bg)', display: 'flex', flexDirection: 'column' }}>
+          <div className="fd-detail">
             <h3 style={{ fontSize: '0.95rem', margin: '0 0 10px', textTransform: 'uppercase', letterSpacing: 1, color: 'var(--mu)' }}>Informasi & Audit</h3>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.6, margin: '0 0 24px' }}>{feature.description}</p>
 
             <h3 style={{ fontSize: '0.95rem', margin: '0 0 10px', textTransform: 'uppercase', letterSpacing: 1, color: 'var(--mu)' }}>Pengguna Utama</h3>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'color-mix(in srgb, var(--acb) 10%, transparent)', borderRadius: 12, color: 'var(--acx)', marginBottom: 24 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: 'color-mix(in srgb, var(--acb) 10%, transparent)', borderRadius: 12, color: 'var(--tx)', marginBottom: 24 }}>
               <div style={{ background: 'var(--acb)', color: 'var(--acx)', padding: 8, borderRadius: '50%', display: 'flex' }}><Icon name="user-round" /></div>
               <span style={{ fontWeight: 600, fontSize: '1.05rem' }}>{feature.users}</span>
             </div>

@@ -179,7 +179,7 @@ export default function SearchDialog({
             if (e.key === 'Escape') onClose();
           }}
         />
-        <div id="ql" aria-label="Hasil pencarian">
+        <div id="ql" role="region" aria-label="Hasil pencarian" aria-live="polite">
           {visible.length ? (
             visible.map((entry) => (
               <button key={`${entry.kind}-${entry.id}`} onClick={() => choose(entry)} aria-label={`Buka ${entry.name}`}>

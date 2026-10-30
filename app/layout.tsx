@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords: SITE_KEYWORDS,
   applicationName: SITE_NAME,
   category: 'education',
-  authors: [{ name: 'Andy Pratama', url: SOCIAL.cal }],
+  authors: [{ name: 'Andy Pratama', url: SOCIAL.portfolio }],
   creator: 'Andy Pratama',
   publisher: SITE_NAME,
   alternates: { canonical: '/' },
@@ -43,6 +43,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    site: '@andypratama3_',
+    creator: '@andypratama3_',
   },
   robots: INDEXABLE
     ? {
@@ -90,6 +92,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="me" href={SOCIAL.portfolio} />
+        <link rel="me" href={SOCIAL.github} />
+        <link rel="me" href={SOCIAL.linkedin} />
+        <link rel="me" href={SOCIAL.jobstreet} />
+        <link rel="me" href={SOCIAL.instagram} />
+        <link rel="me" href={SOCIAL.x} />
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem('sk-theme')||localStorage.getItem('ps-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}`,

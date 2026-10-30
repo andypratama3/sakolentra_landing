@@ -30,22 +30,22 @@ const FeatureCard = memo(function FeatureCard({ feature }: { feature: Feature })
       <span className="ic">
         <Icon name={feature.icon} />
       </span>
-      <h3>{feature.name}</h3>
-      <p>{feature.description}</p>
-      
+      <span className="card-title">{feature.name}</span>
+      <span className="card-desc">{feature.description}</span>
+
       {feature.capabilities.length > 0 && (
-        <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 4, width: '100%', alignItems: 'flex-start' }}>
+        <span className="card-cap-list">
           {feature.capabilities.slice(0, 2).map((cap, i) => (
-            <div key={i} style={{ fontSize: '0.75rem', color: 'var(--mu)', background: 'var(--sf2)', padding: '2px 8px', borderRadius: 6, display: 'flex', alignItems: 'center', gap: 6, width: '100%', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-              <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--bd)' }} />
+            <span className="card-cap" key={i}>
+              <span className="card-cap-dot" aria-hidden="true" />
               {cap}
-            </div>
+            </span>
           ))}
-        </div>
+        </span>
       )}
 
       {feature.flow && (
-        <span className="tag" style={{ marginTop: 12 }}>
+        <span className="tag card-tag">
           <Icon name="play" />
           Ada simulasi interaktif
         </span>
@@ -97,7 +97,7 @@ export default function FeaturesSection() {
               ease: 'power2.out',
               clearProps: 'opacity,visibility,transform',
               // Cards already in view (just filtered) still play once.
-              immediateRender: true,
+              immediateRender: false,
             });
           });
         }, root);

@@ -39,7 +39,7 @@ export default function ResultsSection() {
       </div>
       {flow.steps && flow.steps.length > 0 && (
         <div className="flow-steps-summary rv" style={{ margin: '24px auto', maxWidth: 600 }}>
-          <h4 style={{ fontSize: '0.9rem', marginBottom: 12, textAlign: 'left' }}>Langkah yang disimulasikan ({flow.steps.length}):</h4>
+          <h3 style={{ fontSize: '0.9rem', marginBottom: 12, textAlign: 'left' }}>Langkah yang disimulasikan ({flow.steps.length}):</h3>
           <ol style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', gap: 8, paddingLeft: 20 }}>
             {flow.steps.map((st, idx) => (
               <li key={idx} style={{ fontSize: '0.85rem' }}>

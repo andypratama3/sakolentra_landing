@@ -69,7 +69,7 @@ export default function Header() {
         >
           <Icon name="sun-moon" />
         </button>
-        <a className="btn p" href="#cta" aria-label="Hubungi atau book call" style={{ padding: '8px 14px' }}>
+        <a className="btn p" href="#cta" aria-label="Hubungi atau book call">
           <Icon name="calendar-check" />
           <span className="lbl">Kontak</span>
         </a>

@@ -1,5 +1,6 @@
 import BrandLogo from './BrandLogo';
 import { BRAND } from '@/lib/brand';
+import { SOCIAL } from '@/lib/site';
 
 export default function Footer() {
   return (
@@ -15,6 +16,14 @@ export default function Footer() {
         <a href="#tentang">Tentang</a>
         <a href="#cta">Kontak</a>
       </nav>
+      <a
+        className="footer-portfolio"
+        href={SOCIAL.portfolio}
+        target="_blank"
+        rel="me noopener noreferrer"
+      >
+        Portfolio <span aria-hidden="true">↗</span>
+      </a>
       <span className="mu">© 2026 {BRAND.name}</span>
     </footer>
   );

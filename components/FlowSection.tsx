@@ -138,13 +138,13 @@ export default function FlowSection() {
           }}
         >
           
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 20 }}>
             <h3 style={{ margin: 0, fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, background: 'var(--acb)', color: 'var(--acx)', borderRadius: '50%', fontSize: '0.75rem' }}>{activeStep + 1}</span>
               {current?.title || ''}
             </h3>
             {activeStep === 0 && (
-              <div className="pulse-hint" style={{ fontSize: '0.8rem', color: 'var(--ac)', display: 'flex', alignItems: 'center', gap: 6, fontWeight: 500, background: 'color-mix(in srgb, var(--acb) 15%, transparent)', padding: '4px 12px', borderRadius: 99 }}>
+              <div className="pulse-hint">
                 <Icon name="chevron-right" /> Tekan Spasi atau Lanjut
               </div>
             )}

@@ -20,6 +20,8 @@ export const SITE_DESCRIPTION = `${BRAND.name}: sistem sekolah terintegrasi deng
 
 export const SITE_KEYWORDS = [
   'Sakolentra',
+  'Andy Pratama',
+  'portfolio Andy Pratama',
   'sistem informasi sekolah',
   'aplikasi sekolah terintegrasi',
   'sistem akademik sekolah',
@@ -104,7 +106,8 @@ export const jsonLd = {
       },
       slogan: BRAND.tagline,
       email: CONTACT_EMAIL,
-      sameAs: [SOCIAL.github, SOCIAL.linkedin, SOCIAL.cal],
+      founder: { '@id': `${SITE_URL}/#person` },
+      employee: { '@id': `${SITE_URL}/#person` },
       knowsAbout: [
         'Sistem informasi sekolah',
         'Virtual Account sekolah',
@@ -127,6 +130,7 @@ export const jsonLd = {
       name: SITE_NAME,
       description: SITE_DESCRIPTION,
       inLanguage: 'id-ID',
+      author: { '@id': `${SITE_URL}/#person` },
       publisher: { '@id': `${SITE_URL}/#org` },
     },
     {
@@ -137,7 +141,10 @@ export const jsonLd = {
       description: SITE_DESCRIPTION,
       inLanguage: 'id-ID',
       isPartOf: { '@id': `${SITE_URL}/#website` },
+      author: { '@id': `${SITE_URL}/#person` },
+      creator: { '@id': `${SITE_URL}/#person` },
       about: { '@id': `${SITE_URL}/#app` },
+      mainEntity: { '@id': `${SITE_URL}/#app` },
       mentions: partnerNodes.map((p) => ({ '@id': p['@id'] })),
       primaryImageOfPage: {
         '@type': 'ImageObject',
@@ -173,6 +180,7 @@ export const jsonLd = {
       ],
       publisher: { '@id': `${SITE_URL}/#org` },
       author: { '@id': `${SITE_URL}/#person` },
+      creator: { '@id': `${SITE_URL}/#person` },
       audience: {
         '@type': 'EducationalAudience',
         educationalRole: 'administrator',
@@ -183,10 +191,29 @@ export const jsonLd = {
       '@type': 'Person',
       '@id': `${SITE_URL}/#person`,
       name: 'Andy Pratama',
-      url: SOCIAL.cal,
-      sameAs: [SOCIAL.github, SOCIAL.linkedin, SOCIAL.cal],
+      url: SOCIAL.portfolio,
+      description:
+        'Fullstack Software Engineer di Samarinda yang membangun Sakolentra: sistem administrasi dan keuangan sekolah terintegrasi.',
+      sameAs: [
+        SOCIAL.github,
+        SOCIAL.linkedin,
+        SOCIAL.jobstreet,
+        SOCIAL.instagram,
+        SOCIAL.x,
+        SOCIAL.cal,
+      ],
       jobTitle: 'Fullstack Software Engineer',
       email: CONTACT_EMAIL,
+      worksFor: { '@id': `${SITE_URL}/#org` },
+      knowsAbout: [
+        'Next.js',
+        'React',
+        'TypeScript',
+        'Laravel',
+        'REST API',
+        'DevOps',
+        'Sistem informasi sekolah',
+      ],
       homeLocation: {
         '@type': 'Place',
         name: 'Samarinda, Kalimantan Timur',
